@@ -70,14 +70,14 @@ export const LoveCardsSection: React.FC = () => {
   };
 
   return (
-    <section className="relative w-full min-h-screen bg-dark-900 px-6 py-24 flex flex-col items-center justify-center overflow-hidden">
+    <section className="relative w-full min-h-screen bg-dark-900 px-6 py-32 md:py-40 flex flex-col items-center justify-center overflow-hidden">
       {/* Hidden Secret Spot 12 */}
       <SecretSpot id={12} type="heart" className="top-16 left-1/3 text-lg" />
 
       <div className="z-10 text-center max-w-5xl w-full flex flex-col items-center">
         {/* Header */}
-        <div className="mb-16">
-          <h2 className="font-cinzel text-xs uppercase tracking-[0.25em] text-gold mb-3">
+        <div className="mb-24">
+          <h2 className="font-cinzel text-xs uppercase tracking-[0.25em] text-gold mb-4">
             Razões de Amor
           </h2>
           <p className="font-playfair text-3xl md:text-5xl font-light text-white">
@@ -97,12 +97,12 @@ export const LoveCardsSection: React.FC = () => {
               <div
                 key={card.id}
                 onClick={() => handleCardClick(card.id)}
-                className={`flip-card w-full h-56 cursor-pointer ${isFlipped ? 'flipped' : ''}`}
+                className={`flip-card w-full h-56 cursor-pointer transform active:scale-95 transition-all duration-350 ${isFlipped ? 'flipped' : ''}`}
               >
                 <div className="flip-card-inner relative w-full h-full duration-700">
                   
                   {/* Front Side */}
-                  <div className="flip-card-front absolute inset-0 rounded-2xl glass-panel border border-white/10 p-6 flex flex-col items-center justify-center text-center shadow-lg hover:border-gold/30 transition-all duration-300">
+                  <div className="flip-card-front absolute inset-0 rounded-2xl bg-white/5 backdrop-blur-md border border-white/15 p-6 flex flex-col items-center justify-center text-center shadow-lg hover:border-gold/30 transition-all duration-300">
                     <FaHeart className="text-gold/30 text-3xl mb-4 animate-pulse" />
                     <h3 className="font-cinzel text-sm font-bold tracking-wider text-gray-200">
                       {card.frontTitle}
@@ -113,14 +113,14 @@ export const LoveCardsSection: React.FC = () => {
                   </div>
 
                   {/* Back Side */}
-                  <div className="flip-card-back absolute inset-0 rounded-2xl glass-panel-gold border border-gold/30 p-6 flex flex-col items-center justify-center text-center shadow-xl overflow-hidden bg-dark-800">
+                  <div className="flip-card-back absolute inset-0 rounded-2xl glass-panel-gold border border-gold/40 p-6 flex flex-col items-center justify-center text-center shadow-xl overflow-hidden bg-dark-800">
                     {/* Small glowing overlay */}
                     <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-gold/10 to-transparent pointer-events-none" />
 
                     <h3 className="font-cinzel text-xs font-semibold tracking-widest text-gold mb-3 uppercase">
                       {card.backTitle}
                     </h3>
-                    <p className="font-playfair text-xs md:text-sm font-light text-gray-200 leading-relaxed italic px-2">
+                    <p className="font-playfair text-xs md:text-sm font-light text-gray-200 leading-relaxed md:leading-loose italic px-2">
                       "{card.description}"
                     </p>
                   </div>
@@ -131,7 +131,7 @@ export const LoveCardsSection: React.FC = () => {
           })}
         </div>
       </div>
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-dark-900 to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-dark-900 to-transparent pointer-events-none" />
     </section>
   );
 };

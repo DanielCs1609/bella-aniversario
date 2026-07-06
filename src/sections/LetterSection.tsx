@@ -57,15 +57,15 @@ export const LetterSection: React.FC = () => {
   }, [isOpen]);
 
   return (
-    <section className="relative w-full min-h-screen bg-dark-900 px-6 py-24 flex flex-col items-center justify-center overflow-hidden">
+    <section className="relative w-full min-h-screen bg-dark-900 px-6 py-32 md:py-40 flex flex-col items-center justify-center overflow-hidden">
       {/* Hidden Secret Spot 15 */}
       <SecretSpot id={15} type="heart" className="top-12 right-12 text-sm" />
 
       <div className="z-10 text-center max-w-xl w-full flex flex-col items-center">
         {/* Header */}
         {!isOpen && (
-          <div className="mb-12">
-            <h2 className="font-cinzel text-xs uppercase tracking-[0.25em] text-gold mb-3">
+          <div className="mb-24">
+            <h2 className="font-cinzel text-xs uppercase tracking-[0.25em] text-gold mb-4">
               Carta Intima
             </h2>
             <p className="font-playfair text-3xl md:text-5xl font-light text-white mb-6">
@@ -103,13 +103,13 @@ export const LetterSection: React.FC = () => {
               initial={{ opacity: 0, y: 50, scale: 0.9 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 0.8, ease: 'easeOut' }}
-              className="w-full max-w-lg rounded-2xl bg-[#fbf9f4] text-dark-900 border border-gold/40 shadow-2xl p-8 md:p-12 text-left relative overflow-hidden font-serif"
+              className="w-full max-w-lg rounded-2xl bg-[#fdfbf7] text-dark-900 border border-gold/40 shadow-2xl p-8 md:p-12 text-left relative overflow-hidden font-serif"
             >
               {/* Retro parchment paper grid texture overlays */}
               <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-gold/5 via-transparent to-transparent pointer-events-none" />
               
               {/* Typewritten letter text */}
-              <div className="text-xs md:text-sm text-gray-800 leading-relaxed font-sans whitespace-pre-wrap select-text select-none min-h-[350px]">
+              <div className="text-sm md:text-[1.05rem] text-[#2c2621] leading-loose md:leading-[2.2rem] font-serif whitespace-pre-wrap select-text select-none min-h-[350px]">
                 {typedText}
                 <span className="inline-block w-1.5 h-4 bg-gold ml-1 animate-pulse" />
               </div>
@@ -121,7 +121,7 @@ export const LetterSection: React.FC = () => {
         </AnimatePresence>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-dark-900 to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-dark-900 to-transparent pointer-events-none" />
     </section>
   );
 };

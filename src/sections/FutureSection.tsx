@@ -45,7 +45,7 @@ export const FutureSection: React.FC = () => {
   ];
 
   return (
-    <section className="relative w-full bg-dark-900 px-6 py-24 overflow-hidden">
+    <section className="relative w-full bg-dark-900 px-6 py-32 md:py-40 overflow-hidden">
       {/* Hidden Secret Spot 13 */}
       <SecretSpot id={13} type="star" className="top-10 left-12 text-base" />
 
@@ -53,7 +53,7 @@ export const FutureSection: React.FC = () => {
         
         {/* Header */}
         <div className="text-center mb-24">
-          <h2 className="font-cinzel text-xs uppercase tracking-[0.25em] text-gold mb-3">
+          <h2 className="font-cinzel text-xs uppercase tracking-[0.25em] text-gold mb-4">
             O Amanhã Juntos
           </h2>
           <p className="font-playfair text-3xl md:text-5xl font-light text-white">
@@ -65,7 +65,7 @@ export const FutureSection: React.FC = () => {
         </div>
 
         {/* The Central Path Line */}
-        <div className="absolute left-6 md:left-1/2 top-48 bottom-12 w-[2px] -translate-x-[1px] bg-gradient-to-b from-gold via-blue-500/50 to-transparent shadow-[0_0_15px_rgba(212,175,55,0.2)] border-dashed border-gold/20" />
+        <div className="absolute left-6 md:left-1/2 top-48 bottom-12 w-[2px] -translate-x-[1px] bg-gradient-to-b from-gold via-blue-500/50 to-transparent shadow-[0_0_20px_rgba(212,175,55,0.4)] border-dashed border-gold/20" />
 
         {/* Milestone Steps */}
         <div className="space-y-24">
@@ -85,11 +85,11 @@ export const FutureSection: React.FC = () => {
                 {/* Content Block */}
                 <div className={`w-full md:w-[44%] pl-16 md:pl-0 ${isEven ? 'md:order-1' : 'md:order-2 md:text-left'}`}>
                   <motion.div
-                    initial={{ opacity: 0, y: 30, scale: 0.95 }}
-                    whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                    viewport={{ once: true, amount: 0.4 }}
-                    transition={{ duration: 0.8, ease: 'easeOut' }}
-                    className="p-6 rounded-2xl glass-panel-gold border border-gold/15 shadow-xl relative overflow-hidden"
+                    initial={{ opacity: 0, y: 30, scale: 0.95, filter: 'blur(4px)' }}
+                    whileInView={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ type: 'spring', stiffness: 50, damping: 14, duration: 1.2 }}
+                    className="p-6 rounded-2xl glass-panel-gold border border-gold/25 shadow-xl relative overflow-hidden"
                   >
                     {/* Background flare */}
                     <div className="absolute -top-10 -left-10 w-24 h-24 bg-gold/5 blur-xl pointer-events-none" />
@@ -116,7 +116,7 @@ export const FutureSection: React.FC = () => {
           })}
         </div>
       </div>
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-dark-900 to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-dark-900 to-transparent pointer-events-none" />
     </section>
   );
 };

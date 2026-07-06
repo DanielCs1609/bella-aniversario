@@ -69,14 +69,14 @@ export const StarSkySection: React.FC = () => {
   };
 
   return (
-    <section className="relative w-full min-h-screen bg-dark-900 px-6 py-24 flex flex-col items-center justify-center overflow-hidden">
+    <section className="relative w-full min-h-screen bg-dark-900 px-6 py-32 md:py-40 flex flex-col items-center justify-center overflow-hidden">
       {/* Hidden Secret Spot 9 */}
       <SecretSpot id={9} type="star" className="top-12 left-1/4 text-sm" />
 
       <div className="z-10 text-center max-w-4xl w-full flex flex-col items-center">
         {/* Title */}
-        <div className="mb-12">
-          <h2 className="font-cinzel text-xs uppercase tracking-[0.25em] text-gold mb-3">
+        <div className="mb-24">
+          <h2 className="font-cinzel text-xs uppercase tracking-[0.25em] text-gold mb-4">
             O Universo de Isabella
           </h2>
           <p className="font-playfair text-3xl md:text-5xl font-light text-white">
@@ -162,7 +162,7 @@ export const StarSkySection: React.FC = () => {
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -15 }}
-                className="p-6 rounded-2xl glass-panel-gold border border-gold/20 shadow-xl"
+                className="p-8 rounded-2xl glass-panel-gold border border-gold/30 shadow-xl"
               >
                 <h3 className="font-cinzel text-gold text-sm tracking-widest uppercase mb-3 font-semibold">
                   {selectedStar.label}
@@ -186,7 +186,7 @@ export const StarSkySection: React.FC = () => {
           </AnimatePresence>
         </div>
       </div>
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-dark-900 to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-dark-900 to-transparent pointer-events-none" />
     </section>
   );
 };

@@ -68,14 +68,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onStart }) => {
 
         <motion.h1
           variants={itemVariants}
-          className="font-cinzel text-5xl md:text-8xl font-black tracking-widest text-transparent bg-clip-text bg-gradient-to-b from-white via-gray-100 to-gold drop-shadow-[0_0_30px_rgba(212,175,55,0.15)] mb-6 select-none"
+          className="font-cinzel text-5xl md:text-8xl font-black tracking-[0.2em] md:tracking-[0.35em] text-transparent bg-clip-text bg-gradient-to-b from-white via-gray-100 to-gold drop-shadow-[0_0_30px_rgba(212,175,55,0.25)] mb-8 select-none"
         >
           ISABELLA
         </motion.h1>
 
         <motion.p
           variants={itemVariants}
-          className="font-playfair text-lg md:text-2xl font-light italic text-gray-300 mb-12 select-none"
+          className="font-playfair text-lg md:text-2xl font-light italic text-gray-300 mb-16 select-none"
         >
           Hoje é um dia muito especial.
         </motion.p>
@@ -83,11 +83,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onStart }) => {
         <motion.div variants={itemVariants} className="flex justify-center">
           <button
             onClick={handleStart}
-            className="group relative px-8 py-3.5 rounded-full border border-gold/40 bg-black/40 backdrop-blur-md text-gold hover:text-white font-cinzel text-xs uppercase tracking-[0.2em] transition-all duration-500 overflow-hidden cursor-pointer shadow-[0_0_20px_rgba(212,175,55,0.05)] hover:shadow-[0_0_25px_rgba(212,175,55,0.2)] hover:border-gold"
+            className="btn-premium"
           >
-            {/* Glowing fill animation */}
-            <span className="absolute inset-0 bg-gradient-to-r from-gold/0 via-gold/15 to-gold/0 transform translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-out" />
-            
             <span className="relative flex items-center gap-2">
               Começar Experiência
               <FiChevronDown className="text-sm group-hover:translate-y-1 transition-transform duration-300" />

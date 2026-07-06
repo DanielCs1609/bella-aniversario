@@ -52,7 +52,7 @@ export const CounterSection: React.FC = () => {
   ];
 
   return (
-    <section className="relative w-full min-h-screen flex flex-col items-center justify-center bg-dark-900 px-6 py-20 overflow-hidden">
+    <section className="relative w-full min-h-screen flex flex-col items-center justify-center bg-dark-900 px-6 py-32 md:py-40 overflow-hidden">
       {/* Hidden Secret Spot 4 */}
       <SecretSpot id={4} type="star" className="top-1/4 left-12 text-base" />
 
@@ -63,7 +63,7 @@ export const CounterSection: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1.0 }}
-          className="font-cinzel text-xs uppercase tracking-[0.25em] text-gold mb-3"
+          className="font-cinzel text-xs uppercase tracking-[0.25em] text-gold mb-4"
         >
           Nossa Linha do Tempo
         </motion.p>
@@ -83,7 +83,7 @@ export const CounterSection: React.FC = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1.0, delay: 0.4 }}
-          className="text-xs md:text-sm text-gray-400 font-light max-w-md mx-auto mb-16"
+          className="text-xs md:text-sm text-gray-400 font-light max-w-md mx-auto mb-20 md:mb-24"
         >
           Cada segundo ao seu lado é um presente que eu celebro.
         </motion.p>
@@ -98,13 +98,13 @@ export const CounterSection: React.FC = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="flex flex-col items-center justify-center p-6 md:p-8 rounded-2xl glass-panel-gold border border-gold/15 shadow-[0_0_20px_rgba(212,175,55,0.05)] relative overflow-hidden"
+              className="flex flex-col items-center justify-center p-6 md:p-8 rounded-2xl glass-panel-gold border border-gold/25 shadow-[0_0_30px_rgba(212,175,55,0.1)] relative overflow-hidden"
             >
               {/* Soft gold gradient background flare */}
               <div className="absolute inset-0 bg-gradient-to-br from-gold/5 via-transparent to-transparent pointer-events-none" />
 
-              {/* Number display */}
-              <span className="font-cinzel text-4xl md:text-6xl font-bold text-white tracking-tight mb-2 tabular-nums">
+              {/* Number display with gold gradient */}
+              <span className="font-cinzel text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-white via-gray-100 to-gold tracking-tight mb-2 tabular-nums drop-shadow-[0_2px_10px_rgba(212,175,55,0.25)]">
                 {String(unit.value).padStart(2, '0')}
               </span>
               
@@ -117,7 +117,7 @@ export const CounterSection: React.FC = () => {
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-dark-900 to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-dark-900 to-transparent pointer-events-none" />
     </section>
   );
 };

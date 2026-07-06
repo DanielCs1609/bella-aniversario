@@ -28,12 +28,12 @@ export const IntroSection: React.FC = () => {
   return (
     <section 
       id="intro"
-      className="relative w-full min-h-screen flex flex-col items-center justify-center bg-dark-900 px-6 py-16 overflow-hidden"
+      className="relative w-full min-h-screen flex flex-col items-center justify-center bg-dark-900 px-6 py-32 md:py-40 overflow-hidden"
     >
       {/* Hidden Secret Spot 3 */}
       <SecretSpot id={3} type="flower" className="bottom-20 right-10 text-lg" />
 
-      <div className="max-w-4xl w-full flex flex-col md:flex-row items-center justify-center gap-12 z-10">
+      <div className="max-w-4xl w-full flex flex-col md:flex-row items-center justify-center gap-12 md:gap-16 z-10">
         
         {/* Animated Text Container */}
         <motion.div 
@@ -41,7 +41,7 @@ export const IntroSection: React.FC = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
-          className="flex-1 text-center md:text-left space-y-8 max-w-lg"
+          className="flex-1 text-center md:text-left space-y-10 md:space-y-12 max-w-lg"
         >
           <motion.p 
             variants={textLineVariants}
@@ -74,7 +74,7 @@ export const IntroSection: React.FC = () => {
           className="flex-1 flex justify-center items-center relative"
         >
           {/* Glass frame */}
-          <div className="relative p-2 rounded-2xl bg-white/5 border border-white/10 shadow-[0_0_50px_rgba(212,175,55,0.08)] max-w-sm w-full overflow-hidden">
+          <div className="relative p-2.5 rounded-2xl bg-white/5 border border-white/12 shadow-[0_0_60px_rgba(212,175,55,0.15)] max-w-sm w-full overflow-hidden">
             <motion.div
               animate={{
                 scale: [1, 1.04, 1],
@@ -89,19 +89,19 @@ export const IntroSection: React.FC = () => {
               <img 
                 src={IsabellaPortrait} 
                 alt="Isabella Portrait" 
-                className="w-full h-auto object-cover aspect-[3/4]"
+                className="w-full h-auto object-cover aspect-[3/4] rounded-xl"
                 loading="lazy"
               />
             </motion.div>
             
             {/* Soft gold border overlay */}
-            <div className="absolute inset-0 border border-gold/10 rounded-2xl pointer-events-none" />
+            <div className="absolute inset-0 border border-gold/15 rounded-2xl pointer-events-none" />
           </div>
         </motion.div>
       </div>
 
       {/* Decorative divider gradient */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-dark-900 to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-dark-900 to-transparent pointer-events-none" />
     </section>
   );
 };

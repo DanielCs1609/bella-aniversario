@@ -54,7 +54,7 @@ export const TimelineSection: React.FC = () => {
   ];
 
   return (
-    <section className="relative w-full bg-dark-900 px-6 py-24 overflow-hidden">
+    <section className="relative w-full bg-dark-900 px-6 py-32 md:py-40 overflow-hidden">
       {/* Hidden Secret Spot 5 */}
       <SecretSpot id={5} type="butterfly" className="top-10 right-16 text-lg" />
       {/* Hidden Secret Spot 6 */}
@@ -62,8 +62,8 @@ export const TimelineSection: React.FC = () => {
 
       <div className="max-w-4xl mx-auto relative">
         {/* Header */}
-        <div className="text-center mb-20">
-          <h2 className="font-cinzel text-xs uppercase tracking-[0.25em] text-gold mb-3">
+        <div className="text-center mb-24">
+          <h2 className="font-cinzel text-xs uppercase tracking-[0.25em] text-gold mb-4">
             Nossa Jornada
           </h2>
           <p className="font-playfair text-3xl md:text-5xl font-light text-white">
@@ -72,7 +72,7 @@ export const TimelineSection: React.FC = () => {
         </div>
 
         {/* Timeline Line */}
-        <div className="absolute left-4 md:left-1/2 top-40 bottom-10 w-[2px] -translate-x-[1px] bg-gradient-to-b from-blue-600 via-gold to-transparent shadow-[0_0_10px_rgba(212,175,55,0.4)]" />
+        <div className="absolute left-4 md:left-1/2 top-40 bottom-10 w-[2px] -translate-x-[1px] bg-gradient-to-b from-blue-600 via-gold to-transparent shadow-[0_0_12px_rgba(212,175,55,0.5)]" />
 
         {/* Moments List */}
         <div className="space-y-24 md:space-y-36">
@@ -90,11 +90,11 @@ export const TimelineSection: React.FC = () => {
                 {/* Spacer or Content depending on desktop grid */}
                 <div className={`w-full md:w-[45%] pl-12 md:pl-0 ${isEven ? 'md:order-1' : 'md:order-2 md:text-left'}`}>
                   <motion.div
-                    initial={{ opacity: 0, x: isEven ? -40 : 40, y: 25 }}
-                    whileInView={{ opacity: 1, x: 0, y: 0 }}
-                    viewport={{ once: true, amount: 0.3 }}
-                    transition={{ duration: 1.0, ease: 'easeOut' }}
-                    className="p-6 md:p-8 rounded-2xl glass-panel-gold border border-gold/15 shadow-xl relative overflow-hidden"
+                    initial={{ opacity: 0, x: isEven ? -30 : 30, y: 30, filter: 'blur(5px)' }}
+                    whileInView={{ opacity: 1, x: 0, y: 0, filter: 'blur(0px)' }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ type: 'spring', stiffness: 60, damping: 15, duration: 1.2 }}
+                    className="p-6 md:p-8 rounded-2xl glass-panel-gold border border-gold/25 shadow-xl relative overflow-hidden"
                   >
                     {/* Glowing highlight */}
                     <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-gold via-blue-500 to-transparent" />

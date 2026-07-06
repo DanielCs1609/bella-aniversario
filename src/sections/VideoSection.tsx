@@ -102,14 +102,14 @@ export const VideoSection: React.FC = () => {
   };
 
   return (
-    <section className="relative w-full min-h-screen bg-dark-900 px-6 py-24 flex flex-col items-center justify-center overflow-hidden">
+    <section className="relative w-full min-h-screen bg-dark-900 px-6 py-32 md:py-40 flex flex-col items-center justify-center overflow-hidden">
       {/* Hidden Secret Spot 14 */}
       <SecretSpot id={14} type="flower" className="bottom-16 right-20 text-sm" />
 
       <div className="z-10 text-center max-w-5xl w-full flex flex-col items-center">
         {/* Header */}
-        <div className="mb-16">
-          <h2 className="font-cinzel text-xs uppercase tracking-[0.25em] text-gold mb-3">
+        <div className="mb-24">
+          <h2 className="font-cinzel text-xs uppercase tracking-[0.25em] text-gold mb-4">
             Amor Compartilhado
           </h2>
           <p className="font-playfair text-3xl md:text-5xl font-light text-white">
@@ -132,7 +132,7 @@ export const VideoSection: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="relative rounded-2xl glass-panel border border-white/10 p-5 flex flex-col justify-between items-center text-center shadow-lg hover:border-gold/30 transition-all duration-300 group"
+                className="relative rounded-2xl bg-white/5 backdrop-blur-md border border-white/15 p-5 flex flex-col justify-between items-center text-center shadow-lg hover:border-gold/30 transition-all duration-300 transform active:scale-[0.98] group"
               >
                 {/* Watched Badge */}
                 {isWatched && (
@@ -142,7 +142,7 @@ export const VideoSection: React.FC = () => {
                 )}
 
                 {/* Portrait Circle */}
-                <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-gold/30 mb-4 group-hover:border-gold transition-colors duration-300">
+                <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-gold/30 mb-4 group-hover:border-gold group-hover:scale-105 transition-all duration-300">
                   <img src={msg.photoUrl} alt={msg.name} className="w-full h-full object-cover" />
                 </div>
 
@@ -161,7 +161,7 @@ export const VideoSection: React.FC = () => {
                 {/* Watch Button */}
                 <button
                   onClick={() => handlePlayVideo(msg)}
-                  className="px-5 py-2 rounded-full bg-gold/10 border border-gold/30 text-gold hover:bg-gold hover:text-dark-900 font-cinzel text-[10px] tracking-wider uppercase transition-all duration-300 flex items-center gap-1.5 cursor-pointer"
+                  className="px-6 py-2.5 rounded-full bg-gold/10 border border-gold/30 text-gold hover:bg-gold hover:text-dark-900 font-cinzel text-[10px] tracking-widest uppercase transition-all duration-300 transform active:scale-95 flex items-center gap-1.5 cursor-pointer hover:shadow-[0_0_15px_rgba(212,175,55,0.3)] shadow-[0_4px_10px_rgba(0,0,0,0.15)]"
                 >
                   <FiPlay />
                   Assistir
@@ -182,7 +182,7 @@ export const VideoSection: React.FC = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="relative w-full max-w-2xl aspect-video rounded-2xl border border-gold/20 overflow-hidden bg-dark-900 z-10 shadow-2xl"
+              className="relative w-full max-w-2xl aspect-video rounded-2xl border border-gold/30 overflow-hidden bg-dark-900 z-10 shadow-2xl"
             >
               {/* Close Button */}
               <button
@@ -221,7 +221,7 @@ export const VideoSection: React.FC = () => {
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="relative w-full max-w-sm p-8 rounded-2xl glass-panel-gold text-center z-10 shadow-2xl"
+              className="relative w-full max-w-sm p-8 rounded-2xl glass-panel-gold border border-gold/30 text-center z-10 shadow-2xl"
             >
               <div className="text-4xl text-gold mb-4 animate-bounce">💖</div>
               <h3 className="font-cinzel text-sm font-bold tracking-widest text-gold uppercase mb-3">
@@ -235,7 +235,7 @@ export const VideoSection: React.FC = () => {
                   setShowCelebration(false);
                   audioSystem.playClick();
                 }}
-                className="px-6 py-2 rounded-full border border-gold/30 text-gold hover:bg-gold hover:text-dark-900 font-cinzel text-xs tracking-wider transition-all duration-300"
+                className="btn-premium"
               >
                 Concluir Memórias
               </button>
@@ -244,7 +244,7 @@ export const VideoSection: React.FC = () => {
         )}
       </AnimatePresence>
 
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-dark-900 to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-dark-900 to-transparent pointer-events-none" />
     </section>
   );
 };

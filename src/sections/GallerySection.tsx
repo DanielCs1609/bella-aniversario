@@ -157,14 +157,14 @@ export const GallerySection: React.FC = () => {
   ] as const;
 
   return (
-    <section className="relative w-full min-h-screen bg-dark-900 px-6 py-24 overflow-hidden">
+    <section className="relative w-full min-h-screen bg-dark-900 px-6 py-32 md:py-40 overflow-hidden">
       {/* Hidden Secret Spot 7 */}
       <SecretSpot id={7} type="star" className="top-16 left-20 text-base" />
 
       <div className="max-w-6xl mx-auto z-10 relative">
         {/* Title */}
-        <div className="text-center mb-16">
-          <h2 className="font-cinzel text-xs uppercase tracking-[0.25em] text-gold mb-3">
+        <div className="text-center mb-24">
+          <h2 className="font-cinzel text-xs uppercase tracking-[0.25em] text-gold mb-4">
             Álbum de Memórias
           </h2>
           <p className="font-playfair text-3xl md:text-5xl font-light text-white">
@@ -173,7 +173,7 @@ export const GallerySection: React.FC = () => {
         </div>
 
         {/* Tab Filters */}
-        <div className="flex flex-wrap justify-center gap-2 mb-12 max-w-2xl mx-auto">
+        <div className="flex flex-wrap justify-center gap-3 mb-16 max-w-2xl mx-auto">
           {categoriesList.map(cat => (
             <button
               key={cat.id}
@@ -181,10 +181,10 @@ export const GallerySection: React.FC = () => {
                 setActiveCategory(cat.id);
                 if ('vibrate' in navigator) navigator.vibrate(15);
               }}
-              className={`px-5 py-2.5 rounded-full font-cinzel text-[10px] tracking-widest uppercase transition-all duration-300 cursor-pointer ${
+              className={`px-5 py-2.5 rounded-full font-cinzel text-[10px] tracking-widest uppercase transition-all duration-300 cursor-pointer transform active:scale-95 border ${
                 activeCategory === cat.id
-                  ? 'bg-gold text-dark-900 font-bold shadow-[0_0_15px_rgba(212,175,55,0.3)]'
-                  : 'bg-white/5 text-gray-400 hover:text-white border border-white/5'
+                  ? 'bg-gold text-dark-900 font-bold border-gold shadow-[0_4px_15px_rgba(212,175,55,0.3)]'
+                  : 'bg-white/5 text-gray-400 hover:text-white border-white/5 hover:border-gold/30 shadow-[0_4px_10px_rgba(0,0,0,0.15)]'
               }`}
             >
               {cat.label}
@@ -211,7 +211,7 @@ export const GallerySection: React.FC = () => {
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6 }}
                 onClick={() => openLightbox(index)}
-                className={`group relative overflow-hidden rounded-2xl border border-white/5 cursor-pointer shadow-lg ${
+                className={`group relative overflow-hidden rounded-3xl border border-white/10 cursor-pointer shadow-xl ${
                   isTall ? 'md:row-span-2' : ''
                 } ${isWide ? 'md:col-span-2' : ''}`}
               >
@@ -244,7 +244,7 @@ export const GallerySection: React.FC = () => {
       {/* Lightbox Modal */}
       <AnimatePresence>
         {lightboxIndex !== null && (
-          <div className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4 select-none">
+          <div className="fixed inset-0 z-50 bg-black/98 backdrop-blur-xl flex items-center justify-center p-4 select-none">
             {/* Top Toolbar */}
             <div className="absolute top-4 left-4 right-4 flex justify-between items-center z-10 text-white">
               <span className="font-cinzel text-xs tracking-wider text-gray-400">
@@ -254,21 +254,21 @@ export const GallerySection: React.FC = () => {
               <div className="flex gap-4">
                 <button
                   onClick={() => setZoomScale(s => Math.min(s + 0.5, 3))}
-                  className="p-2 bg-white/10 hover:bg-white/20 rounded-full cursor-pointer text-white"
+                  className="p-2.5 bg-white/10 hover:bg-white/20 rounded-full cursor-pointer text-white transition-all transform active:scale-95"
                   title="Aumentar Zoom"
                 >
                   <FiZoomIn size={18} />
                 </button>
                 <button
                   onClick={() => setZoomScale(s => Math.max(s - 0.5, 1))}
-                  className="p-2 bg-white/10 hover:bg-white/20 rounded-full cursor-pointer text-white"
+                  className="p-2.5 bg-white/10 hover:bg-white/20 rounded-full cursor-pointer text-white transition-all transform active:scale-95"
                   title="Diminuir Zoom"
                 >
                   <FiZoomOut size={18} />
                 </button>
                 <button
                   onClick={closeLightbox}
-                  className="p-2 bg-white/10 hover:bg-white/20 rounded-full cursor-pointer text-white"
+                  className="p-2.5 bg-white/10 hover:bg-white/20 rounded-full cursor-pointer text-white transition-all transform active:scale-95"
                   title="Fechar"
                 >
                   <FiX size={18} />
@@ -279,7 +279,7 @@ export const GallerySection: React.FC = () => {
             {/* Left Button */}
             <button
               onClick={prevPhoto}
-              className="absolute left-6 top-1/2 -translate-y-1/2 p-3 bg-white/5 hover:bg-white/15 text-white rounded-full z-10 transition-colors cursor-pointer hidden md:block"
+              className="absolute left-6 top-1/2 -translate-y-1/2 p-3.5 bg-white/5 hover:bg-white/15 text-white rounded-full z-10 transition-colors cursor-pointer hidden md:block"
             >
               <FiChevronLeft size={24} />
             </button>
@@ -296,17 +296,17 @@ export const GallerySection: React.FC = () => {
                   if (info.offset.x < -100) nextPhoto();
                   if (info.offset.x > 100) prevPhoto();
                 }}
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.3 }}
+                initial={{ opacity: 0, scale: 0.9, y: 15 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.9, y: 15 }}
+                transition={{ type: 'spring', stiffness: 200, damping: 25 }}
                 className="relative flex items-center justify-center max-w-full max-h-[75vh]"
               >
                 <motion.img
                   src={filteredPhotos[lightboxIndex].url}
                   alt={filteredPhotos[lightboxIndex].title}
                   style={{ scale: zoomScale }}
-                  className="max-w-full max-h-[75vh] object-contain rounded-lg shadow-2xl transition-transform duration-250 cursor-grab active:cursor-grabbing"
+                  className="max-w-full max-h-[75vh] object-contain rounded-2xl shadow-2xl transition-transform duration-250 cursor-grab active:cursor-grabbing"
                   loading="lazy"
                 />
               </motion.div>
@@ -325,7 +325,7 @@ export const GallerySection: React.FC = () => {
             {/* Right Button */}
             <button
               onClick={nextPhoto}
-              className="absolute right-6 top-1/2 -translate-y-1/2 p-3 bg-white/5 hover:bg-white/15 text-white rounded-full z-10 transition-colors cursor-pointer hidden md:block"
+              className="absolute right-6 top-1/2 -translate-y-1/2 p-3.5 bg-white/5 hover:bg-white/15 text-white rounded-full z-10 transition-colors cursor-pointer hidden md:block"
             >
               <FiChevronRight size={24} />
             </button>
@@ -333,7 +333,7 @@ export const GallerySection: React.FC = () => {
         )}
       </AnimatePresence>
 
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-dark-900 to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-dark-900 to-transparent pointer-events-none" />
     </section>
   );
 };

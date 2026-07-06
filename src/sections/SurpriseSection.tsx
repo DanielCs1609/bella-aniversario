@@ -57,7 +57,7 @@ export const SurpriseSection: React.FC = () => {
   };
 
   return (
-    <section className="relative w-full h-screen bg-dark-900 px-6 flex flex-col items-center justify-center overflow-hidden">
+    <section className="relative w-full min-h-screen bg-dark-900 px-6 py-32 md:py-40 flex flex-col items-center justify-center overflow-hidden">
       
       {/* Animated stars background flare */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-gold/5 via-transparent to-transparent pointer-events-none" />
@@ -87,7 +87,7 @@ export const SurpriseSection: React.FC = () => {
 
               <button
                 onClick={handleStartSurprise}
-                className="group relative px-8 py-3.5 rounded-full border border-gold bg-gold/10 hover:bg-gold text-gold hover:text-dark-900 font-cinzel text-xs uppercase tracking-[0.2em] transition-all duration-500 overflow-hidden cursor-pointer shadow-[0_0_25px_rgba(212,175,55,0.15)] active:scale-95"
+                className="btn-premium"
               >
                 <span className="relative flex items-center gap-2">
                   Abrir Surpresa
@@ -102,9 +102,9 @@ export const SurpriseSection: React.FC = () => {
               transition={{ duration: 1.0 }}
               className="space-y-6 flex flex-col items-center"
             >
-              <div className="text-4xl">🌟✨💖</div>
+              <div className="text-4xl animate-pulse">🌟✨💖</div>
               
-              <h2 className="font-cinzel text-3xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-gold to-white tracking-widest uppercase">
+              <h2 className="font-cinzel text-3xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-gold to-white tracking-widest uppercase drop-shadow-[0_2px_15px_rgba(212,175,55,0.2)]">
                 Te Amo
               </h2>
               
@@ -114,7 +114,7 @@ export const SurpriseSection: React.FC = () => {
 
               <div className="h-[1px] w-20 bg-gold/40 mx-auto my-4" />
 
-              <p className="font-cinzel text-xs uppercase tracking-[0.3em] text-gold font-bold">
+              <p className="font-cinzel text-xs uppercase tracking-[0.3em] text-gold font-bold leading-loose">
                 Para sempre seu,<br />
                 Daniel.
               </p>
@@ -133,7 +133,7 @@ export const SurpriseSection: React.FC = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="relative w-full max-w-4xl aspect-video rounded-2xl border border-gold/20 overflow-hidden bg-dark-900 z-10 shadow-2xl"
+              className="relative w-full max-w-4xl aspect-video rounded-2xl border border-gold/30 overflow-hidden bg-dark-900 z-10 shadow-2xl"
             >
               <button
                 onClick={handleClosePlayer}
@@ -154,7 +154,6 @@ export const SurpriseSection: React.FC = () => {
           </div>
         )}
       </AnimatePresence>
-
     </section>
   );
 };

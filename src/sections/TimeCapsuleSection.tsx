@@ -190,14 +190,14 @@ export const TimeCapsuleSection: React.FC = () => {
   ];
 
   return (
-    <section className="relative w-full min-h-screen bg-dark-900 px-6 py-24 flex flex-col items-center justify-center overflow-hidden">
+    <section className="relative w-full min-h-screen bg-dark-900 px-6 py-32 md:py-40 flex flex-col items-center justify-center overflow-hidden">
       {/* Hidden Secret Spot 8 */}
       <SecretSpot id={8} type="flower" className="top-1/4 right-20 text-base" />
 
       <div className="z-10 text-center max-w-4xl w-full flex flex-col items-center justify-center">
         {/* Title */}
-        <div className="mb-16">
-          <h2 className="font-cinzel text-xs uppercase tracking-[0.25em] text-gold mb-3">
+        <div className="mb-24">
+          <h2 className="font-cinzel text-xs uppercase tracking-[0.25em] text-gold mb-4">
             Guardado a Sete Chaves
           </h2>
           <p className="font-playfair text-3xl md:text-5xl font-light text-white">
@@ -310,7 +310,7 @@ export const TimeCapsuleSection: React.FC = () => {
 
               <button
                 onClick={closeMemoryModal}
-                className="mt-8 px-6 py-2 rounded-full border border-gold/30 text-gold hover:bg-gold hover:text-dark-900 font-cinzel text-xs tracking-wider transition-all duration-300"
+                className="btn-premium mt-8"
               >
                 Fechar Recordação
               </button>
@@ -319,7 +319,7 @@ export const TimeCapsuleSection: React.FC = () => {
         )}
       </AnimatePresence>
 
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-dark-900 to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-dark-900 to-transparent pointer-events-none" />
     </section>
   );
 };

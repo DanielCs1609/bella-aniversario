@@ -77,14 +77,14 @@ export const BookSection: React.FC = () => {
   };
 
   return (
-    <section className="relative w-full min-h-screen bg-dark-900 px-6 py-24 flex flex-col items-center justify-center overflow-hidden">
+    <section className="relative w-full min-h-screen bg-dark-900 px-6 py-32 md:py-40 flex flex-col items-center justify-center overflow-hidden">
       {/* Hidden Secret Spot 10 */}
       <SecretSpot id={10} type="flower" className="bottom-12 left-12 text-sm" />
 
       <div className="z-10 text-center max-w-4xl w-full flex flex-col items-center">
         {/* Section Title */}
-        <div className="mb-16">
-          <h2 className="font-cinzel text-xs uppercase tracking-[0.25em] text-gold mb-3">
+        <div className="mb-24">
+          <h2 className="font-cinzel text-xs uppercase tracking-[0.25em] text-gold mb-4">
             Nossas Memórias Escritas
           </h2>
           <p className="font-playfair text-3xl md:text-5xl font-light text-white">
@@ -93,7 +93,7 @@ export const BookSection: React.FC = () => {
         </div>
 
         {/* Realistic Book Container */}
-        <div className="relative w-full max-w-md md:max-w-2xl page-flip-container aspect-[3/4] md:aspect-[1.4/1] rounded-2xl glass-panel-gold border border-gold/15 shadow-2xl p-6 md:p-10 flex flex-col md:flex-row gap-6 md:gap-10 overflow-hidden">
+        <div className="relative w-full max-w-md md:max-w-2xl page-flip-container aspect-[3/4] md:aspect-[1.4/1] rounded-2xl glass-panel-gold border border-gold/25 shadow-2xl p-6 md:p-10 flex flex-col md:flex-row gap-6 md:gap-10 overflow-hidden">
           
           {/* Subtle central binder shading for book feeling */}
           <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-r from-black/45 via-gold/15 to-black/45 z-20" />
@@ -131,7 +131,7 @@ export const BookSection: React.FC = () => {
                     {pages[currentPage].title}
                   </h3>
 
-                  <p className="font-playfair text-sm md:text-base italic font-light text-gray-300 leading-relaxed mb-6">
+                  <p className="font-playfair text-sm md:text-base italic font-light text-gray-300 leading-relaxed md:leading-loose mb-6">
                     "{pages[currentPage].text}"
                   </p>
                 </div>
@@ -149,8 +149,8 @@ export const BookSection: React.FC = () => {
           <button
             onClick={handlePrev}
             disabled={currentPage === 0}
-            className={`p-3 rounded-full border border-gold/30 text-gold transition-all duration-300 ${
-              currentPage === 0 ? 'opacity-30 cursor-not-allowed' : 'hover:bg-gold/15 active:scale-95 cursor-pointer'
+            className={`p-3.5 rounded-full border border-gold/30 text-gold transition-all duration-300 transform ${
+              currentPage === 0 ? 'opacity-35 cursor-not-allowed' : 'hover:bg-gold/15 active:scale-90 cursor-pointer hover:border-gold shadow-[0_4px_12px_rgba(212,175,55,0.15)]'
             }`}
             title="Página Anterior"
           >
@@ -164,8 +164,8 @@ export const BookSection: React.FC = () => {
           <button
             onClick={handleNext}
             disabled={currentPage === pages.length - 1}
-            className={`p-3 rounded-full border border-gold/30 text-gold transition-all duration-300 ${
-              currentPage === pages.length - 1 ? 'opacity-30 cursor-not-allowed' : 'hover:bg-gold/15 active:scale-95 cursor-pointer'
+            className={`p-3.5 rounded-full border border-gold/30 text-gold transition-all duration-300 transform ${
+              currentPage === pages.length - 1 ? 'opacity-35 cursor-not-allowed' : 'hover:bg-gold/15 active:scale-90 cursor-pointer hover:border-gold shadow-[0_4px_12px_rgba(212,175,55,0.15)]'
             }`}
             title="Próxima Página"
           >
@@ -173,7 +173,7 @@ export const BookSection: React.FC = () => {
           </button>
         </div>
       </div>
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-dark-900 to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-dark-900 to-transparent pointer-events-none" />
     </section>
   );
 };
