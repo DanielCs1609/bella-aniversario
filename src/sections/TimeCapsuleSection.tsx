@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { audioSystem } from '../utils/audioSystem';
 import { SecretSpot } from '../components/SecretsOverlay';
-import { FiFolder, FiGift, FiSmile, FiHeart, FiX, FiStar, FiCompass } from 'react-icons/fi';
+import { FiGift, FiSmile, FiHeart, FiX, FiStar, FiCompass, FiLock, FiUnlock } from 'react-icons/fi';
 
 
 interface MemoryItem {
@@ -161,21 +161,21 @@ export const TimeCapsuleSection: React.FC = () => {
               y: { duration: 4, repeat: Infinity, ease: 'easeInOut' },
               scale: { duration: 0.4 }
             }}
-            className="w-48 h-48 flex flex-col items-center justify-center glass-panel-gold shadow-[0_0_50px_rgba(212,175,55,0.15)] cursor-pointer relative z-25 hover:shadow-[0_0_60px_rgba(212,175,55,0.35)] transition-all duration-500"
+            className="w-44 h-44 rounded-full flex flex-col items-center justify-center glass-panel-gold border border-gold/30 shadow-[0_0_35px_rgba(212,175,55,0.2)] hover:scale-105 active:scale-95 transition-all duration-300 relative z-25 hover:shadow-[0_0_50px_rgba(212,175,55,0.4)]"
           >
             {/* Holographic lines inside chest */}
-            <div className="absolute inset-2 border border-dashed border-gold/10 rounded-2xl pointer-events-none" />
+            <div className="absolute inset-2 border border-dashed border-gold/10 rounded-full pointer-events-none" />
 
             <motion.div
-              animate={{ rotate: isOpen ? 180 : 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-gold text-5xl mb-3 drop-shadow-[0_0_15px_rgba(212,175,55,0.8)]"
+              animate={{ rotate: isOpen ? [0, -10, 10, 0] : 0 }}
+              transition={{ duration: 0.5 }}
+              className="text-gold text-4xl mb-3 drop-shadow-[0_0_15px_rgba(212,175,55,0.8)]"
             >
-              <FiFolder />
+              {isOpen ? <FiUnlock /> : <FiLock />}
             </motion.div>
             
             <span className="font-cinzel text-[10px] tracking-[0.25em] text-gold font-semibold uppercase">
-              {isOpen ? 'Fechar Baú' : 'Abrir Baú'}
+              {isOpen ? 'Fechar' : 'Abrir'}
             </span>
           </motion.div>
 

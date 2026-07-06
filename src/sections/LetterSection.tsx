@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { audioSystem } from '../utils/audioSystem';
 import { SecretSpot } from '../components/SecretsOverlay';
-import { FiMail } from 'react-icons/fi';
+import { FiMail, FiX } from 'react-icons/fi';
 
 export const LetterSection: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -105,6 +105,18 @@ export const LetterSection: React.FC = () => {
               transition={{ duration: 0.8, ease: 'easeOut' }}
               className="w-full max-w-lg rounded-2xl bg-[#fdfbf7] text-dark-900 border border-gold/40 shadow-2xl p-8 md:p-12 text-left relative overflow-hidden font-serif"
             >
+              {/* Close Button */}
+              <button
+                onClick={() => {
+                  setIsOpen(false);
+                  audioSystem.playClick();
+                }}
+                className="absolute top-4 right-4 p-2 bg-[#fdfbf7] hover:bg-gold/15 text-[#2c2621] rounded-full border border-gold/20 transition-colors z-20 cursor-pointer active:scale-95 flex items-center justify-center"
+                title="Fechar Carta"
+              >
+                <FiX size={18} />
+              </button>
+
               {/* Retro parchment paper grid texture overlays */}
               <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-gold/5 via-transparent to-transparent pointer-events-none" />
               
