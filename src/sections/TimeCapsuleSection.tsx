@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { audioSystem } from '../utils/audioSystem';
 import { SecretSpot } from '../components/SecretsOverlay';
-import { FiFolder, FiImage, FiMessageSquare, FiMic, FiGift, FiSmile, FiHeart, FiX } from 'react-icons/fi';
-import FirstDateImg from '../assets/first_date.png';
+import { FiFolder, FiGift, FiSmile, FiHeart, FiX, FiStar, FiCompass } from 'react-icons/fi';
+
 
 interface MemoryItem {
   id: number;
@@ -17,7 +17,7 @@ interface MemoryItem {
 export const TimeCapsuleSection: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeMemory, setActiveMemory] = useState<MemoryItem | null>(null);
-  const [isPlayingAudio, setIsPlayingAudio] = useState(false);
+
 
   const handleOpenChest = () => {
     setIsOpen(!isOpen);
@@ -37,117 +37,72 @@ export const TimeCapsuleSection: React.FC = () => {
 
   const closeMemoryModal = () => {
     setActiveMemory(null);
-    setIsPlayingAudio(false);
     audioSystem.playClick();
   };
 
-  const handlePlayProceduralAudio = () => {
-    setIsPlayingAudio(true);
-    audioSystem.playChime(); // plays arpeggio
-    setTimeout(() => {
-      audioSystem.playChime();
-    }, 800);
-    setTimeout(() => {
-      setIsPlayingAudio(false);
-    }, 2000);
-  };
+
 
   const memories: MemoryItem[] = [
     {
       id: 1,
-      type: 'photo',
-      label: 'Primeira Foto',
-      icon: <FiImage />,
-      title: 'Primeira Foto Juntos',
+      type: 'love',
+      label: 'Amor',
+      icon: <FiHeart />,
+      title: 'Desejo de Amor',
       details: (
-        <div className="space-y-4 text-center">
-          <div className="rounded-xl overflow-hidden aspect-video border border-white/10 max-w-sm mx-auto">
-            <img src={FirstDateImg} alt="Primeira Foto" className="w-full h-full object-cover" />
-          </div>
-          <p className="text-gray-300 text-sm font-light mt-4">
-            "Aquele sorrisinho tímido de quem já sabia, lá no fundo, que estava do lado da pessoa certa para toda a vida."
+        <div className="text-center py-4 space-y-4">
+          <div className="text-4xl text-gold mb-2">❤️</div>
+          <p className="text-white font-cinzel text-sm font-semibold uppercase tracking-wider">Alegria Compartilhada</p>
+          <p className="text-gray-300 text-sm font-light max-w-xs mx-auto leading-relaxed">
+            "Meu maior desejo é que você receba de volta todo o amor, carinho e cuidado que distribui. Que você se sinta sempre valorizada, querida e saiba que meu coração é e sempre será o seu lugar seguro."
           </p>
         </div>
       )
     },
     {
       id: 2,
-      type: 'chat',
-      label: 'Primeira Conversa',
-      icon: <FiMessageSquare />,
-      title: 'A Primeira Mensagem',
+      type: 'photo',
+      label: 'Sucesso',
+      icon: <FiStar />,
+      title: 'Desejo de Sucesso',
       details: (
-        <div className="space-y-4 max-w-xs mx-auto">
-          <div className="flex flex-col gap-3 text-xs md:text-sm font-sans">
-            <div className="bg-white/5 border border-white/10 text-gray-300 p-3 rounded-2xl rounded-tl-none self-start max-w-[85%] text-left">
-              Oi Isabella! Tudo bem? Vi que você gosta de fotografia...
-            </div>
-            <div className="bg-gold/20 border border-gold/30 text-white p-3 rounded-2xl rounded-tr-none self-end max-w-[85%] text-left">
-              Oii! Tudo sim e com você? Ahh, eu amo tirar fotos de paisagens, como você descobriu? haha 🙈
-            </div>
-            <div className="bg-white/5 border border-white/10 text-gray-300 p-3 rounded-2xl rounded-tl-none self-start max-w-[85%] text-left">
-              Chute de sorte! E parece que eu acertei em cheio... 😊
-            </div>
-          </div>
-          <p className="text-gray-400 text-xs italic mt-6 text-center">
-            Enviada em 12 de Outubro de 2022 às 19:42.
+        <div className="text-center py-4 space-y-4">
+          <div className="text-4xl text-gold mb-2">⭐</div>
+          <p className="text-white font-cinzel text-sm font-semibold uppercase tracking-wider">Conquistas e Brilho</p>
+          <p className="text-gray-300 text-sm font-light max-w-xs mx-auto leading-relaxed">
+            "Que este novo ano abra portas incríveis na sua caminhada. Desejo que sua inteligência brilhante te leve a lugares altos, que você realize cada projeto profissional ou pessoal e que celebre muitas vitórias."
           </p>
         </div>
       )
     },
     {
       id: 3,
-      type: 'audio',
-      label: 'Primeiro Áudio',
-      icon: <FiMic />,
-      title: 'Primeiro Áudio no WhatsApp',
+      type: 'gift',
+      label: 'Paz',
+      icon: <FiGift />,
+      title: 'Desejo de Paz e Saúde',
       details: (
-        <div className="text-center py-6 space-y-6">
-          <p className="text-gray-300 text-sm font-light">
-            "Sua voz tímida pela primeira vez saindo da tela do celular..."
-          </p>
-          <div className="flex justify-center items-center gap-4">
-            <button
-              onClick={handlePlayProceduralAudio}
-              className={`w-14 h-14 rounded-full flex items-center justify-center text-white ${
-                isPlayingAudio ? 'bg-gold animate-pulse shadow-[0_0_15px_rgba(212,175,55,0.4)]' : 'bg-white/10 hover:bg-gold/30'
-              } transition-all duration-300 cursor-pointer`}
-            >
-              <FiMic className="text-xl" />
-            </button>
-            <div className="flex gap-[3px] h-6 items-center">
-              {[...Array(12)].map((_, i) => (
-                <span
-                  key={i}
-                  className={`w-[3px] bg-gold rounded-full transition-all duration-300 ${
-                    isPlayingAudio ? 'h-6 animate-pulse' : 'h-2'
-                  }`}
-                  style={{
-                    animationDelay: `${i * 0.1}s`,
-                    animationDuration: '0.4s'
-                  }}
-                />
-              ))}
-            </div>
-          </div>
-          <p className="text-xs text-gray-400">
-            {isPlayingAudio ? "Reproduzindo áudio de 0:08..." : "Clique para ouvir a lembrança"}
+        <div className="text-center py-4 space-y-4">
+          <div className="text-4xl text-gold mb-2">🕊️</div>
+          <p className="text-white font-cinzel text-sm font-semibold uppercase tracking-wider">Serenidade e Equilíbrio</p>
+          <p className="text-gray-300 text-sm font-light max-w-xs mx-auto leading-relaxed">
+            "Desejo dias tranquilos, noites de sono reparador e uma saúde de ferro. Que a paz acompanhe cada decisão sua e que você sempre encontre tempo para respirar fundo e sorrir com leveza."
           </p>
         </div>
       )
     },
     {
       id: 4,
-      type: 'gift',
-      label: 'Primeiro Presente',
-      icon: <FiGift />,
-      title: 'A Primeira Lembrancinha',
+      type: 'chat',
+      label: 'Aventuras',
+      icon: <FiCompass />,
+      title: 'Desejo de Aventuras',
       details: (
         <div className="text-center py-4 space-y-4">
-          <div className="text-4xl text-gold mb-2">🎁</div>
-          <p className="text-white font-cinzel text-sm">O Pingente de Estrela</p>
-          <p className="text-gray-300 text-sm font-light max-w-xs mx-auto">
-            "Para que você sempre lembre que a sua luz é única no mundo inteiro. Queria te dar algo que combinasse com o brilho dos seus olhos."
+          <div className="text-4xl text-gold mb-2">🧭</div>
+          <p className="text-white font-cinzel text-sm font-semibold uppercase tracking-wider">Novos Horizontes</p>
+          <p className="text-gray-300 text-sm font-light max-w-xs mx-auto leading-relaxed">
+            "Que você colecione carimbos no passaporte, conheça cenários deslumbrantes e viva histórias fantásticas. Que o mundo se revele lindo para você e que eu possa registrar cada sorriso seu nessas viagens."
           </p>
         </div>
       )
@@ -155,34 +110,15 @@ export const TimeCapsuleSection: React.FC = () => {
     {
       id: 5,
       type: 'sticker',
-      label: 'Primeira Figurinha',
+      label: 'Felicidade',
       icon: <FiSmile />,
-      title: 'Figurinha de WhatsApp Marcante',
+      title: 'Desejo de Felicidade',
       details: (
-        <div className="text-center py-6 space-y-4">
-          <div className="w-24 h-24 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center text-4xl mx-auto shadow-inner animate-bounce">
-            🐱❤️
-          </div>
-          <p className="text-white font-cinzel text-xs tracking-wider uppercase pt-2">Gatinho Mandando Coração</p>
-          <p className="text-gray-400 text-xs italic max-w-xs mx-auto">
-            A figurinha que virou nossa marca registrada sempre que nos despedíamos à noite.
-          </p>
-        </div>
-      )
-    },
-    {
-      id: 6,
-      type: 'love',
-      label: 'Primeiro Eu Te Amo',
-      icon: <FiHeart />,
-      title: 'O Primeiro "Eu Te Amo"',
-      details: (
-        <div className="text-center py-4 space-y-6">
-          <p className="font-playfair text-xl md:text-2xl text-gold italic">
-            "Eu te amo."
-          </p>
+        <div className="text-center py-4 space-y-4">
+          <div className="text-4xl text-gold mb-2">✨</div>
+          <p className="text-white font-cinzel text-sm font-semibold uppercase tracking-wider">Alegria Pura e Simples</p>
           <p className="text-gray-300 text-sm font-light max-w-xs mx-auto leading-relaxed">
-            Dito sussurrado, na calçada embaixo do poste de luz, sob um céu completamente estrelado. O segundo exato em que o tempo parou e as batidas de nossos corações se sincronizaram.
+            "Que nunca falte motivo para você dar aquela sua gargalhada gostosa que ilumina a minha vida. Desejo felicidade nos pequenos detalhes do dia a dia, fazendo tudo valer a pena."
           </p>
         </div>
       )
@@ -198,13 +134,13 @@ export const TimeCapsuleSection: React.FC = () => {
         {/* Title */}
         <div className="mb-24">
           <h2 className="font-cinzel text-xs uppercase tracking-[0.25em] text-gold mb-4">
-            Guardado a Sete Chaves
+            Desejos de Aniversário
           </h2>
           <p className="font-playfair text-3xl md:text-5xl font-light text-white">
-            Cápsula do Tempo
+            Baú de Desejos
           </p>
           <p className="text-xs text-gray-400 mt-4 max-w-sm mx-auto">
-            Toque no baú de vidro para abrir as nossas maiores recordações escondidas.
+            Abra o baú para liberar 5 desejos especiais que guardei no coração para o seu novo ciclo.
           </p>
         </div>
 

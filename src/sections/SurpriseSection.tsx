@@ -105,17 +105,17 @@ export const SurpriseSection: React.FC = () => {
               <div className="text-4xl animate-pulse">🌟✨💖</div>
               
               <h2 className="font-cinzel text-3xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-gold to-white tracking-widest uppercase drop-shadow-[0_2px_15px_rgba(212,175,55,0.2)]">
-                Te Amo
+                Parabéns!
               </h2>
               
               <p className="font-playfair text-lg md:text-xl text-gray-200 italic font-light leading-relaxed">
-                "Que a nossa estrada continue cheia de brilho, risos e que possamos comemorar este dia juntos por toda a eternidade."
+                "Que a nossa estrada continue cheia de brilho, risos e muito amor. Que o seu novo ciclo seja iluminado e que possamos comemorar este dia juntos por toda a vida."
               </p>
 
               <div className="h-[1px] w-20 bg-gold/40 mx-auto my-4" />
 
               <p className="font-cinzel text-xs uppercase tracking-[0.3em] text-gold font-bold leading-loose">
-                Para sempre seu,<br />
+                Com todo o meu amor,<br />
                 Daniel.
               </p>
             </motion.div>

@@ -77,7 +77,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onStart }) => {
           variants={itemVariants}
           className="font-playfair text-lg md:text-2xl font-light italic text-gray-300 mb-16 select-none"
         >
-          Hoje é um dia muito especial.
+          Um presente digital preparado com todo o meu amor para celebrar a sua vida e o seu dia especial.
         </motion.p>
 
         <motion.div variants={itemVariants} className="flex justify-center">

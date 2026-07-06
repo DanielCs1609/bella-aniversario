@@ -47,21 +47,21 @@ export const IntroSection: React.FC = () => {
             variants={textLineVariants}
             className="font-playfair text-lg md:text-2xl text-gray-300 font-light leading-relaxed select-none"
           >
-            Existem bilhões de pessoas no mundo...
+            Existem pessoas que iluminam qualquer lugar com a sua presença...
           </motion.p>
           
           <motion.p 
             variants={textLineVariants}
             className="font-playfair text-lg md:text-2xl text-gray-300 font-light leading-relaxed select-none"
           >
-            Mas apenas uma delas mudou completamente o rumo da minha história.
+            Mas ninguém brilha de forma tão única na minha vida quanto você.
           </motion.p>
           
           <motion.p 
             variants={textLineVariants}
             className="font-cinzel text-2xl md:text-4xl text-gold font-bold tracking-widest select-none pt-4"
           >
-            Você.
+            Hoje, o dia é seu.
           </motion.p>
         </motion.div>
 

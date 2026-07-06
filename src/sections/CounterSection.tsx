@@ -3,8 +3,11 @@ import { motion } from 'framer-motion';
 import { SecretSpot } from '../components/SecretsOverlay';
 
 export const CounterSection: React.FC = () => {
-  // Start date of the story: June 12, 2023 (Dia dos Namorados no Brasil)
-  const START_DATE = new Date('2023-06-12T20:00:00').getTime();
+  // =========================================================================
+  // COLOQUE A DATA DE NASCIMENTO DA ISABELLA ABAIXO (Formato: AAAA-MM-DDTHH:MM:SS)
+  // Exemplo: 15 de Outubro de 2002, às 08:30 -> '2002-10-15T08:30:00'
+  // =========================================================================
+  const START_DATE = new Date('2002-10-15T00:00:00').getTime();
 
   const [timeElapsed, setTimeElapsed] = useState({
     days: 0,
@@ -65,7 +68,7 @@ export const CounterSection: React.FC = () => {
           transition={{ duration: 1.0 }}
           className="font-cinzel text-xs uppercase tracking-[0.25em] text-gold mb-4"
         >
-          Nossa Linha do Tempo
+          Celebrando a Sua Existência
         </motion.p>
         
         <motion.h2
@@ -75,7 +78,7 @@ export const CounterSection: React.FC = () => {
           transition={{ duration: 1.0, delay: 0.2 }}
           className="font-playfair text-3xl md:text-5xl font-light text-white mb-6"
         >
-          Escrevendo nossa história há...
+          O mundo é mais iluminado há...
         </motion.h2>
 
         <motion.p
@@ -85,7 +88,7 @@ export const CounterSection: React.FC = () => {
           transition={{ duration: 1.0, delay: 0.4 }}
           className="text-xs md:text-sm text-gray-400 font-light max-w-md mx-auto mb-20 md:mb-24"
         >
-          Cada segundo ao seu lado é um presente que eu celebro.
+          Sua presença traz cor, sentido e alegria infinita para a minha vida. Cada segundo seu na Terra é um motivo de festa.
         </motion.p>
 
         {/* Counter cards */}

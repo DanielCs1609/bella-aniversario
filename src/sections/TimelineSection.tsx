@@ -18,37 +18,37 @@ export const TimelineSection: React.FC = () => {
   const moments: TimelineMoment[] = [
     {
       id: 1,
-      date: '12 Out 2022',
-      title: 'Primeira Conversa',
-      description: 'O início de tudo. Aquele primeiro "oi" despretensioso no Instagram que, sem sabermos, mudaria o rumo de nossas vidas para sempre.',
+      date: 'A Essência',
+      title: 'A Luz que Você Irradia',
+      description: 'Desde que chegou ao mundo, você trouxe consigo uma doçura e uma energia única. É impossível passar por você e não ser tocado pela sua luz e pelo seu carisma natural.',
       gradient: 'from-blue-900/40 to-indigo-900/40'
     },
     {
       id: 2,
-      date: '02 Nov 2022',
-      title: 'Primeiro Encontro',
-      description: 'A ansiedade no peito, o frio na barriga e o momento mágico em que te vi pela primeira vez. A conversa fluiu como se já nos conhecêssemos há vidas.',
+      date: 'A Determinação',
+      title: 'Sua Força Admirável',
+      description: 'Uma das coisas que mais me dão orgulho é ver a mulher forte, independente e focada que você se tornou. Você encara qualquer desafio de cabeça erguida e corre atrás dos seus sonhos com uma garra inspiradora.',
       image: FirstDateImg
     },
     {
       id: 3,
-      date: '25 Dez 2022',
-      title: 'Primeiro Presente',
-      description: 'O cuidado nos detalhes. Um pequeno embrulho que carregava não apenas um presente físico, mas a certeza de que estávamos construindo algo muito especial.',
+      date: 'A Empatia',
+      title: 'Um Coração Puro',
+      description: 'A sua generosidade e a forma atenta como você cuida de quem ama são raras. Você coloca amor e dedicação em cada pequeno detalhe, tornando a vida de todos ao seu redor mais leve e feliz.',
       gradient: 'from-amber-900/40 to-yellow-950/40'
     },
     {
       id: 4,
-      date: '12 Fev 2023',
-      title: 'Primeira Foto',
-      description: 'Registrando a nossa felicidade. Rostos colados, sorrisos bobos e a primeira de muitas memórias congeladas no tempo que hoje enfeitam nossa parede.',
+      date: 'A Alegria',
+      title: 'O Seu Sorriso Lindo',
+      description: 'O som da sua risada é capaz de mudar o meu dia inteiro. O seu bom humor espontâneo e o seu jeito alegre de levar a vida são contagiantes e fazem qualquer momento parecer mágico.',
       image: IsabellaPortrait
     },
     {
       id: 5,
-      date: '12 Jun 2023',
-      title: 'Hoje e Sempre',
-      description: 'O início oficial de uma jornada de cumplicidade. O dia dos namorados em que decidimos caminhar lado a lado, de mãos dadas, rumo ao infinito.',
+      date: 'O Novo Ciclo',
+      title: 'Celebrando Você',
+      description: 'Hoje iniciamos um novo capítulo da sua história. Desejo que seu novo ano seja espetacular, cheio de conquistas, saúde e paz. E que eu possa estar sempre ao seu lado celebrando e apoiando cada passo seu.',
       image: FirstTripImg
     }
   ];
@@ -64,10 +64,10 @@ export const TimelineSection: React.FC = () => {
         {/* Header */}
         <div className="text-center mb-24">
           <h2 className="font-cinzel text-xs uppercase tracking-[0.25em] text-gold mb-4">
-            Nossa Jornada
+            Sua Jornada de Brilho
           </h2>
           <p className="font-playfair text-3xl md:text-5xl font-light text-white">
-            Como Nossa História se Escreve
+            Os Seus Capítulos Mais Lindos
           </p>
         </div>
 

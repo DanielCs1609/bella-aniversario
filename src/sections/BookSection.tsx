@@ -23,29 +23,29 @@ export const BookSection: React.FC = () => {
     {
       id: 1,
       date: 'Capítulo I',
-      title: 'O Primeiro Olhar',
-      text: 'Não sei se foi a doçura do seu olhar ou o jeito calmo que você sorriu pra mim. Mas naquela noite, percebi que existia algo diferente em você, uma energia que me puxava e me fazia querer conhecer cada detalhe da sua mente.',
+      title: 'A Luz que Você Espalha',
+      text: 'Mais do que um aniversário, hoje celebro a luz que você espalha por onde passa. O seu jeito de enxergar o lado bonito das pequenas coisas, o entusiasmo nas conversas e a bondade no trato com os outros são o que te tornam verdadeiramente única.',
       image: IsabellaPortrait
     },
     {
       id: 2,
       date: 'Capítulo II',
-      title: 'A Sintonia Silenciosa',
-      text: 'O que mais me impressiona é a facilidade com que nos entendemos. Até nos silêncios, há conforto. A gente conversa com os olhos e divide risadas sem precisar dizer uma única palavra. É uma conexão de almas.',
+      title: 'Sua Força Silenciosa',
+      text: 'Por trás da sua doçura e do seu sorriso contagiante, existe uma mulher forte, inteligente e focada. Ver você batalhando pelos seus objetivos e superando cada obstáculo me enche de um orgulho indescritível.',
       image: FirstDateImg
     },
     {
       id: 3,
       date: 'Capítulo III',
-      title: 'Colecionando Sorrisos',
-      text: 'Cada piada boba, cada viagem de carro cantando alto, cada momento simples no sofá. O amor não está nas grandes promessas, mas na beleza desses momentos comuns que se tornam extraordinários porque são vividos com você.',
+      title: 'A Sua Espontaneidade',
+      text: 'Adoro observar a sua espontaneidade: quando você se concentra fazendo algo que ama, sua expressão ao ouvir sua música favorita, ou suas gargalhadas genuínas. Esses pequenos detalhes compõem a pessoa maravilhosa que você é.',
       image: FirstTripImg
     },
     {
       id: 4,
       date: 'Capítulo IV',
-      title: 'O Meu Porto Seguro',
-      text: 'Obrigado por ser meu apoio nos dias difíceis e meu sorriso nos dias felizes. Você é a minha estabilidade, meu abraço que acalma a tempestade e a certeza de que tudo vai ficar bem no final. Eu te amo por quem você é.',
+      title: 'Desejos para o Seu Ciclo',
+      text: 'Neste seu novo ano, desejo que você conquiste cada sonho que guardou no coração. Que sua vida seja repleta de risos, novas descobertas, paz e que sua luz continue brilhando forte e inspirando todos nós. Feliz Aniversário!',
       image: 'https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=800&q=80'
     }
   ];
@@ -85,10 +85,10 @@ export const BookSection: React.FC = () => {
         {/* Section Title */}
         <div className="mb-24">
           <h2 className="font-cinzel text-xs uppercase tracking-[0.25em] text-gold mb-4">
-            Nossas Memórias Escritas
+            O Livro de Isabella
           </h2>
           <p className="font-playfair text-3xl md:text-5xl font-light text-white">
-            Livro de Histórias
+            Os Seus Detalhes Únicos
           </p>
         </div>
 

@@ -15,38 +15,38 @@ export const LoveCardsSection: React.FC = () => {
     {
       id: 1,
       frontTitle: 'Seu Sorriso',
-      backTitle: 'A Luz da Minha Vida',
-      description: 'A forma pura como seus olhos acompanham seu sorriso sempre que você está verdadeiramente feliz. É contagiante e acalma minha alma.'
+      backTitle: 'Luz no Meu Caminho',
+      description: 'O brilho verdadeiro que surge em seus olhos sempre que você sorri de verdade. Sua alegria é contagiante e clareia até os meus dias mais cinzentos.'
     },
     {
       id: 2,
       frontTitle: 'Sua Empatia',
-      backTitle: 'Um Coração Gigante',
-      description: 'O jeito atencioso e amoroso com que você cuida e se preocupa com as pessoas ao seu redor. Sua bondade é inspiradora.'
+      backTitle: 'Um Coração Raro',
+      description: 'A forma atenciosa e genuína com que você se importa com as pessoas ao seu redor. Sua bondade é inspiradora e me faz querer ser alguém melhor.'
     },
     {
       id: 3,
-      frontTitle: 'Sua Garra',
-      backTitle: 'Determinação e Força',
-      description: 'A persistência com que você luta pelos seus objetivos. Ver você batalhando pelos seus sonhos me dá orgulho e força.'
+      frontTitle: 'Sua Determinação',
+      backTitle: 'Garra e Foco',
+      description: 'A persistência inabalável com que você luta pelos seus objetivos. Ver você batalhando pelos seus sonhos me enche de admiração e orgulho.'
     },
     {
       id: 4,
-      frontTitle: 'Seu Abraço',
-      backTitle: 'O Meu Porto Seguro',
-      description: 'Aquele encaixe perfeito onde toda a pressa e ansiedade do mundo exterior simplesmente desaparecem por completo.'
+      frontTitle: 'Sua Essência',
+      backTitle: 'Autenticidade Pura',
+      description: 'Sua personalidade marcante, seus valores e o fato de você ser 100% fiel a si mesma. Você é uma pessoa rara de se encontrar.'
     },
     {
       id: 5,
-      frontTitle: 'Sua Inteligência',
-      backTitle: 'Brilho Intelectual',
-      description: 'A forma fascinante como você enxerga o mundo, traz soluções e conversa sobre tudo. Eu poderia te ouvir falar por horas.'
+      frontTitle: 'Sua Mente',
+      backTitle: 'Inteligência Fascínio',
+      description: 'A forma inteligente e perspicaz como você enxerga o mundo, traz soluções e conversa sobre tudo. Eu poderia passar horas te ouvindo falar.'
     },
     {
       id: 6,
       frontTitle: 'Sua Leveza',
-      backTitle: 'Nossa Cumplicidade',
-      description: 'O fato de podermos ser 100% nós mesmos, rindo de piadas bobas e transformando qualquer tarde comum em um grande momento.'
+      backTitle: 'Energia Contagiante',
+      description: 'A facilidade com que você espalha leveza por onde passa, transformando momentos comuns em memórias cheias de risos e carinho.'
     }
   ];
 
@@ -78,13 +78,13 @@ export const LoveCardsSection: React.FC = () => {
         {/* Header */}
         <div className="mb-24">
           <h2 className="font-cinzel text-xs uppercase tracking-[0.25em] text-gold mb-4">
-            Razões de Amor
+            Motivos para Celebrar
           </h2>
           <p className="font-playfair text-3xl md:text-5xl font-light text-white">
-            O que Eu Amo em Você
+            O que Te Torna Única
           </p>
           <p className="text-xs text-gray-400 mt-4 max-w-sm mx-auto">
-            Toque nos cartões de veludo para virá-los e revelar o que sinto em meu peito.
+            Toque nos cartões para revelar as virtudes especiais que celebramos em você hoje.
           </p>
         </div>
 

@@ -165,10 +165,10 @@ export const GallerySection: React.FC = () => {
         {/* Title */}
         <div className="text-center mb-24">
           <h2 className="font-cinzel text-xs uppercase tracking-[0.25em] text-gold mb-4">
-            Álbum de Memórias
+            Homenagem Em Fotos
           </h2>
           <p className="font-playfair text-3xl md:text-5xl font-light text-white">
-            Nossos Momentos Guardados
+            O Seu Brilho em Cada Registro
           </p>
         </div>
 

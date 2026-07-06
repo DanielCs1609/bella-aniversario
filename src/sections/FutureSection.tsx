@@ -14,33 +14,33 @@ export const FutureSection: React.FC = () => {
   const milestones: FutureMilestone[] = [
     {
       id: 1,
-      icon: <FiCompass />,
-      title: 'Nossa Próxima Viagem',
-      description: 'Explorar novas cidades, desbravar praias desertas, provar temperos exóticos e ver o sol se pôr em horizontes distantes, de mãos dadas.'
+      icon: <FiTrendingUp />,
+      title: 'Sucesso e Conquistas',
+      description: 'Que este novo ciclo traga o reconhecimento que você tanto merece. Que os seus planos decolam, seus projetos profissionais cresçam e você alcance tudo o que a sua inteligência brilhante merece.'
     },
     {
       id: 2,
-      icon: <FiHome />,
-      title: 'A Nossa Casa',
-      description: 'Um refúgio com a nossa cara, decorado com risadas, repleto de plantas na janela, cheiro de café passado e a paz de sabermos que pertencemos um ao outro.'
+      icon: <FiCompass />,
+      title: 'Viagens e Descobertas',
+      description: 'Que você conheça lugares novos incríveis, sinta a brisa de mares distantes e viva aventuras inesquecíveis, enchendo sua galeria com fotos espetaculares.'
     },
     {
       id: 3,
-      icon: <FiTrendingUp />,
-      title: 'Crescimento Mútuo',
-      description: 'Apoiar os projetos profissionais um do outro, comemorando cada conquista e servindo de alicerce seguro nas horas de dúvida.'
+      icon: <FiHome />,
+      title: 'Lar e Aconchego',
+      description: 'Desejo que o seu cantinho seja sempre um porto seguro de calmaria, repleto de risadas, cheiro de café fresco e a paz de um refúgio acolhedor.'
     },
     {
       id: 4,
       icon: <FiSmile />,
-      title: 'Coleção Infinita de Memórias',
-      description: 'Envelhecer dividindo piadas, tirando fotos engraçadas e descobrindo que o amor se renova em cada abraço apertado de bom dia.'
+      title: 'Sorrisos e Leveza',
+      description: 'Que nunca falte motivo para você dar aquela sua gargalhada contagiante. Que sua rotina seja cheia de momentos alegres e piadas bobas que fazem tudo valer a pena.'
     },
     {
       id: 5,
       icon: <FiUsers />,
-      title: 'Nossa Própria Família',
-      description: 'Criar uma história de cumplicidade que se estende ao longo das décadas, com a certeza de que nossa base é inabalável e regada de carinho.'
+      title: 'Apoio e Parceria',
+      description: 'Que você se sinta sempre protegida, amada e com a certeza absoluta de que, em cada vitória ou momento de dúvida, eu estarei aqui para te apoiar e te aplaudir de pé.'
     }
   ];
 
@@ -54,13 +54,13 @@ export const FutureSection: React.FC = () => {
         {/* Header */}
         <div className="text-center mb-24">
           <h2 className="font-cinzel text-xs uppercase tracking-[0.25em] text-gold mb-4">
-            O Amanhã Juntos
+            Seus Próximos Capítulos
           </h2>
           <p className="font-playfair text-3xl md:text-5xl font-light text-white">
-            Nossa Estrada do Futuro
+            Caminhos para o Novo Ciclo
           </p>
           <p className="text-xs text-gray-400 mt-4 max-w-sm mx-auto">
-            Role para acender os caminhos dos sonhos que vamos realizar lado a lado.
+            Role para acender os desejos e conquistas que te esperam neste seu novo ano de vida.
           </p>
         </div>
 

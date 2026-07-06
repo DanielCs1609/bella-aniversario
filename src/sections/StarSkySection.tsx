@@ -46,8 +46,8 @@ export const StarSkySection: React.FC = () => {
     },
     {
       id: 5,
-      label: 'Seu Abraço',
-      description: 'O encaixe perfeito, onde o mundo barulhento silencia e eu encontro paz absoluta.',
+      label: 'Sua Essência',
+      description: 'A pureza da sua alma e a energia linda que você irradia. Você é uma pessoa rara e o meu maior privilégio é poder dividir a vida com você.',
       x: 40,
       y: 70
     },
