@@ -11,7 +11,6 @@ import { GallerySection } from './sections/GallerySection';
 import { TimeCapsuleSection } from './sections/TimeCapsuleSection';
 import { StarSkySection } from './sections/StarSkySection';
 import { BookSection } from './sections/BookSection';
-import { PlaylistSection } from './sections/PlaylistSection';
 import { LoveCardsSection } from './sections/LoveCardsSection';
 import { FutureSection } from './sections/FutureSection';
 import { VideoSection } from './sections/VideoSection';
@@ -69,8 +68,6 @@ function App() {
         {/* 3D flip interactive memories book */}
         <BookSection />
 
-        {/* Custom glass Spotify-style player playlist */}
-        <PlaylistSection />
 
         {/* 3D rotate-on-hover Love card grid */}
         <LoveCardsSection />

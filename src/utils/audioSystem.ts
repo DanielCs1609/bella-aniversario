@@ -45,7 +45,7 @@ class AudioSystem {
     // Using a reliable public URL for romantic piano
     try {
       this.audioHtml = new Audio();
-      this.audioHtml.src = 'https://orangefreesounds.com/wp-content/uploads/2025/04/Emotional-romantic-piano-music.mp3';
+      this.audioHtml.src = '/romantic-birthday-music.mp3';
       this.audioHtml.loop = true;
       this.audioHtml.crossOrigin = 'anonymous';
 
