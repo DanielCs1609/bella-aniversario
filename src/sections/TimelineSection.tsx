@@ -94,7 +94,7 @@ export const TimelineSection: React.FC = () => {
                     whileInView={{ opacity: 1, x: 0, y: 0, filter: 'blur(0px)' }}
                     viewport={{ once: true, amount: 0.2 }}
                     transition={{ type: 'spring', stiffness: 60, damping: 15, duration: 1.2 }}
-                    className="p-6 md:p-8 rounded-2xl glass-panel-gold border border-gold/25 shadow-xl relative overflow-hidden"
+                    className="p-6 md:p-8 glass-panel-gold shadow-xl relative overflow-hidden"
                   >
                     {/* Glowing highlight */}
                     <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-gold via-blue-500 to-transparent" />
@@ -113,7 +113,7 @@ export const TimelineSection: React.FC = () => {
 
                     {/* Card Image or Gradient Box */}
                     {moment.image ? (
-                      <div className="overflow-hidden rounded-xl aspect-video border border-white/5 relative">
+                      <div className="overflow-hidden rounded-2xl aspect-video border border-white/5 relative">
                         <img 
                           src={moment.image} 
                           alt={moment.title} 
@@ -123,7 +123,7 @@ export const TimelineSection: React.FC = () => {
                         <div className="absolute inset-0 bg-gradient-to-t from-black/55 to-transparent pointer-events-none" />
                       </div>
                     ) : (
-                      <div className={`w-full aspect-video rounded-xl bg-gradient-to-br ${moment.gradient} border border-white/5 flex items-center justify-center`}>
+                      <div className={`w-full aspect-video rounded-2xl bg-gradient-to-br ${moment.gradient} border border-white/5 flex items-center justify-center`}>
                         <span className="font-cinzel text-xs uppercase tracking-widest text-gold/60">
                           Memória Guardada
                         </span>

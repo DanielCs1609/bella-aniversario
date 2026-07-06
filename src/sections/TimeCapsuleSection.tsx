@@ -225,7 +225,7 @@ export const TimeCapsuleSection: React.FC = () => {
               y: { duration: 4, repeat: Infinity, ease: 'easeInOut' },
               scale: { duration: 0.4 }
             }}
-            className="w-48 h-48 flex flex-col items-center justify-center rounded-3xl glass-panel-gold border-2 border-gold/40 shadow-[0_0_50px_rgba(212,175,55,0.15)] cursor-pointer relative z-25 hover:border-gold hover:shadow-[0_0_60px_rgba(212,175,55,0.35)] transition-all duration-500"
+            className="w-48 h-48 flex flex-col items-center justify-center glass-panel-gold shadow-[0_0_50px_rgba(212,175,55,0.15)] cursor-pointer relative z-25 hover:shadow-[0_0_60px_rgba(212,175,55,0.35)] transition-all duration-500"
           >
             {/* Holographic lines inside chest */}
             <div className="absolute inset-2 border border-dashed border-gold/10 rounded-2xl pointer-events-none" />
@@ -262,7 +262,7 @@ export const TimeCapsuleSection: React.FC = () => {
                       exit={{ opacity: 0, scale: 0, x: 0, y: 0 }}
                       transition={{ type: 'spring', delay: index * 0.1, stiffness: 120 }}
                       onClick={() => handleOpenMemory(memory)}
-                      className="absolute w-14 h-14 rounded-full glass-panel-gold border border-gold/30 text-gold hover:text-white flex items-center justify-center text-xl z-20 shadow-[0_0_15px_rgba(212,175,55,0.2)] hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer"
+                      className="absolute w-14 h-14 rounded-full glass-panel-gold text-gold hover:text-white flex items-center justify-center text-xl z-20 hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer"
                       title={memory.label}
                     >
                       {memory.icon}
@@ -288,7 +288,7 @@ export const TimeCapsuleSection: React.FC = () => {
               initial={{ opacity: 0, scale: 0.9, y: 30 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 30 }}
-              className="relative w-full max-w-md p-8 rounded-2xl glass-panel-gold border border-gold/20 text-center z-10 shadow-2xl"
+              className="relative w-full max-w-md p-8 glass-panel-gold text-center z-10 shadow-2xl"
             >
               {/* Close Button */}
               <button

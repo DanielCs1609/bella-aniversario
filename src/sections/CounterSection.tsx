@@ -98,7 +98,7 @@ export const CounterSection: React.FC = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="flex flex-col items-center justify-center p-6 md:p-8 rounded-2xl glass-panel-gold border border-gold/25 shadow-[0_0_30px_rgba(212,175,55,0.1)] relative overflow-hidden"
+              className="flex flex-col items-center justify-center p-6 md:p-8 glass-panel-gold shadow-[0_0_30px_rgba(212,175,55,0.1)] relative overflow-hidden"
             >
               {/* Soft gold gradient background flare */}
               <div className="absolute inset-0 bg-gradient-to-br from-gold/5 via-transparent to-transparent pointer-events-none" />

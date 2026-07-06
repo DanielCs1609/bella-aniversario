@@ -93,7 +93,7 @@ export const BookSection: React.FC = () => {
         </div>
 
         {/* Realistic Book Container */}
-        <div className="relative w-full max-w-md md:max-w-2xl page-flip-container aspect-[3/4] md:aspect-[1.4/1] rounded-2xl glass-panel-gold border border-gold/25 shadow-2xl p-6 md:p-10 flex flex-col md:flex-row gap-6 md:gap-10 overflow-hidden">
+        <div className="relative w-full max-w-md md:max-w-2xl page-flip-container aspect-[3/4] md:aspect-[1.4/1] glass-panel-gold shadow-2xl p-6 md:p-10 flex flex-col md:flex-row gap-6 md:gap-10 overflow-hidden">
           
           {/* Subtle central binder shading for book feeling */}
           <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-r from-black/45 via-gold/15 to-black/45 z-20" />

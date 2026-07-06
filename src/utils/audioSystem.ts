@@ -45,9 +45,7 @@ class AudioSystem {
     // Using a reliable public URL for romantic piano
     try {
       this.audioHtml = new Audio();
-      this.audioHtml.src = 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3'; // Fallback sample loop
-      // Better romantic loop:
-      this.audioHtml.src = 'https://assets.mixkit.co/music/preview/mixkit-beautiful-dream-2882.mp3';
+      this.audioHtml.src = 'https://orangefreesounds.com/wp-content/uploads/2025/04/Emotional-romantic-piano-music.mp3';
       this.audioHtml.loop = true;
       this.audioHtml.crossOrigin = 'anonymous';
 

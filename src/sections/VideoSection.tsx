@@ -132,7 +132,7 @@ export const VideoSection: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="relative rounded-2xl bg-white/5 backdrop-blur-md border border-white/15 p-5 flex flex-col justify-between items-center text-center shadow-lg hover:border-gold/30 transition-all duration-300 transform active:scale-[0.98] group"
+                className="relative glass-panel p-5 flex flex-col justify-between items-center text-center shadow-lg hover:border-gold/30 transition-all duration-300 transform active:scale-[0.98] group"
               >
                 {/* Watched Badge */}
                 {isWatched && (
@@ -221,7 +221,7 @@ export const VideoSection: React.FC = () => {
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="relative w-full max-w-sm p-8 rounded-2xl glass-panel-gold border border-gold/30 text-center z-10 shadow-2xl"
+              className="relative w-full max-w-sm p-8 glass-panel-gold text-center z-10 shadow-2xl"
             >
               <div className="text-4xl text-gold mb-4 animate-bounce">💖</div>
               <h3 className="font-cinzel text-sm font-bold tracking-widest text-gold uppercase mb-3">

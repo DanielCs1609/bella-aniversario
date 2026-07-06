@@ -133,7 +133,7 @@ export const SurpriseSection: React.FC = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="relative w-full max-w-4xl aspect-video rounded-2xl border border-gold/30 overflow-hidden bg-dark-900 z-10 shadow-2xl"
+              className="relative w-full max-w-4xl aspect-video rounded-3xl border border-gold/30 overflow-hidden bg-dark-900 z-10 shadow-2xl"
             >
               <button
                 onClick={handleClosePlayer}

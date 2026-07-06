@@ -89,7 +89,7 @@ export const FutureSection: React.FC = () => {
                     whileInView={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ type: 'spring', stiffness: 50, damping: 14, duration: 1.2 }}
-                    className="p-6 rounded-2xl glass-panel-gold border border-gold/25 shadow-xl relative overflow-hidden"
+                    className="p-6 glass-panel-gold shadow-xl relative overflow-hidden"
                   >
                     {/* Background flare */}
                     <div className="absolute -top-10 -left-10 w-24 h-24 bg-gold/5 blur-xl pointer-events-none" />

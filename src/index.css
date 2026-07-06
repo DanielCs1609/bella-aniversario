@@ -1,8 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@200;300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+@import "tailwindcss";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@theme {
+  --color-dark-900: #090909;
+  --color-dark-800: #121212;
+  --color-dark-700: #1a1a1a;
+  --color-dark-600: #262626;
+
+  --color-gold: #d4af37;
+  --color-gold-light: #f3e5ab;
+  --color-gold-dark: #aa7c11;
+
+  --font-sans: 'Inter', sans-serif;
+  --font-playfair: 'Playfair Display', serif;
+  --font-cinzel: 'Cinzel', serif;
+
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-float: float 6s ease-in-out infinite;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+}
 
 /* Reset default styles */
 html, body {
@@ -33,19 +53,22 @@ html, body {
   background: rgba(212, 175, 55, 0.5);
 }
 
-/* Glassmorphism Preset */
 .glass-panel {
-  background: rgba(18, 18, 18, 0.6);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  border-radius: 24px;
 }
 
 .glass-panel-gold {
-  background: rgba(18, 18, 18, 0.7);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(212, 175, 55, 0.15);
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4), inset 0 0 12px rgba(212, 175, 55, 0.05);
+  border-radius: 28px;
 }
 
 /* Text Selection */

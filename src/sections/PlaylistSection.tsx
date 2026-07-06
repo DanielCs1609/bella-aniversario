@@ -84,7 +84,7 @@ export const PlaylistSection: React.FC = () => {
         <div className="w-full max-w-3xl flex flex-col md:flex-row gap-8 items-stretch">
           
           {/* Active Song Spotify Embed Card */}
-          <div className="flex-1 rounded-2xl glass-panel-gold border border-gold/25 p-6 flex flex-col justify-between shadow-2xl">
+          <div className="flex-1 glass-panel-gold p-6 flex flex-col justify-between shadow-2xl">
             <div className="space-y-4">
               <div className="relative aspect-video rounded-xl overflow-hidden border border-white/5 shadow-inner">
                 {/* Spotify Embed Player */}

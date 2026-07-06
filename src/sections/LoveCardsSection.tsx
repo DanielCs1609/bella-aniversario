@@ -102,7 +102,7 @@ export const LoveCardsSection: React.FC = () => {
                 <div className="flip-card-inner relative w-full h-full duration-700">
                   
                   {/* Front Side */}
-                  <div className="flip-card-front absolute inset-0 rounded-2xl bg-white/5 backdrop-blur-md border border-white/15 p-6 flex flex-col items-center justify-center text-center shadow-lg hover:border-gold/30 transition-all duration-300">
+                  <div className="flip-card-front absolute inset-0 glass-panel p-6 flex flex-col items-center justify-center text-center shadow-lg hover:border-gold/30 transition-all duration-300">
                     <FaHeart className="text-gold/30 text-3xl mb-4 animate-pulse" />
                     <h3 className="font-cinzel text-sm font-bold tracking-wider text-gray-200">
                       {card.frontTitle}
@@ -113,7 +113,7 @@ export const LoveCardsSection: React.FC = () => {
                   </div>
 
                   {/* Back Side */}
-                  <div className="flip-card-back absolute inset-0 rounded-2xl glass-panel-gold border border-gold/40 p-6 flex flex-col items-center justify-center text-center shadow-xl overflow-hidden bg-dark-800">
+                  <div className="flip-card-back absolute inset-0 glass-panel-gold p-6 flex flex-col items-center justify-center text-center shadow-xl overflow-hidden bg-dark-800">
                     {/* Small glowing overlay */}
                     <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-gold/10 to-transparent pointer-events-none" />
 

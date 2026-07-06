@@ -162,7 +162,7 @@ export const StarSkySection: React.FC = () => {
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -15 }}
-                className="p-8 rounded-2xl glass-panel-gold border border-gold/30 shadow-xl"
+                className="p-8 glass-panel-gold shadow-xl"
               >
                 <h3 className="font-cinzel text-gold text-sm tracking-widest uppercase mb-3 font-semibold">
                   {selectedStar.label}
