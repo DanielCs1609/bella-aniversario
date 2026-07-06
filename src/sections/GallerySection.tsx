@@ -247,11 +247,22 @@ export const GallerySection: React.FC = () => {
           <div className="fixed inset-0 z-50 bg-black/98 backdrop-blur-xl flex items-center justify-center p-4 select-none">
             {/* Top Toolbar */}
             <div className="absolute top-4 left-4 right-4 flex justify-between items-center z-10 text-white">
-              <span className="font-cinzel text-xs tracking-wider text-gray-400">
+              {/* Close Button on the left */}
+              <button
+                onClick={closeLightbox}
+                className="p-2.5 bg-white/10 hover:bg-white/20 rounded-full cursor-pointer text-white transition-all transform active:scale-95 flex items-center justify-center"
+                title="Fechar"
+              >
+                <FiX size={20} />
+              </button>
+
+              {/* Counter in the center */}
+              <span className="font-cinzel text-xs tracking-widest text-gray-400 absolute left-1/2 -translate-x-1/2">
                 {lightboxIndex + 1} / {filteredPhotos.length}
               </span>
               
-              <div className="flex gap-4">
+              {/* Zoom buttons shifted left to avoid collision with AmbientMusicToggle */}
+              <div className="flex gap-3 mr-14">
                 <button
                   onClick={() => setZoomScale(s => Math.min(s + 0.5, 3))}
                   className="p-2.5 bg-white/10 hover:bg-white/20 rounded-full cursor-pointer text-white transition-all transform active:scale-95"
@@ -265,13 +276,6 @@ export const GallerySection: React.FC = () => {
                   title="Diminuir Zoom"
                 >
                   <FiZoomOut size={18} />
-                </button>
-                <button
-                  onClick={closeLightbox}
-                  className="p-2.5 bg-white/10 hover:bg-white/20 rounded-full cursor-pointer text-white transition-all transform active:scale-95"
-                  title="Fechar"
-                >
-                  <FiX size={18} />
                 </button>
               </div>
             </div>
