@@ -87,7 +87,7 @@ export const FutureSection: React.FC = () => {
                   <motion.div
                     initial={{ opacity: 0, y: 30, scale: 0.95, filter: 'blur(4px)' }}
                     whileInView={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
-                    viewport={{ once: true, amount: 0.3 }}
+                    viewport={{ once: true, amount: 0.15 }}
                     transition={{ type: 'spring', stiffness: 50, damping: 14, duration: 1.2 }}
                     className="p-6 glass-panel-gold shadow-xl relative overflow-hidden"
                   >
@@ -103,7 +103,7 @@ export const FutureSection: React.FC = () => {
                       {item.title}
                     </h3>
                     
-                    <p className="text-gray-300 font-light text-xs md:text-sm leading-relaxed">
+                    <p className="text-gray-200 font-light text-xs md:text-sm leading-relaxed">
                       {item.description}
                     </p>
                   </motion.div>

@@ -72,10 +72,10 @@ export const TimelineSection: React.FC = () => {
         </div>
 
         {/* Timeline Line */}
-        <div className="absolute left-4 md:left-1/2 top-40 bottom-10 w-[2px] -translate-x-[1px] bg-gradient-to-b from-blue-600 via-gold to-transparent shadow-[0_0_12px_rgba(212,175,55,0.5)]" />
+        <div className="absolute left-4 md:left-1/2 top-32 bottom-8 w-[2px] -translate-x-[1px] bg-gradient-to-b from-blue-600 via-gold to-transparent shadow-[0_0_12px_rgba(212,175,55,0.5)]" />
 
         {/* Moments List */}
-        <div className="space-y-24 md:space-y-36">
+        <div className="space-y-12 md:space-y-16">
           {moments.map((moment, index) => {
             const isEven = index % 2 === 0;
 
@@ -92,7 +92,7 @@ export const TimelineSection: React.FC = () => {
                   <motion.div
                     initial={{ opacity: 0, x: isEven ? -30 : 30, y: 30, filter: 'blur(5px)' }}
                     whileInView={{ opacity: 1, x: 0, y: 0, filter: 'blur(0px)' }}
-                    viewport={{ once: true, amount: 0.2 }}
+                    viewport={{ once: true, amount: 0.1 }}
                     transition={{ type: 'spring', stiffness: 60, damping: 15, duration: 1.2 }}
                     className="p-6 md:p-8 glass-panel-gold shadow-xl relative overflow-hidden"
                   >

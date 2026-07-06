@@ -137,7 +137,8 @@ export const SurpriseSection: React.FC = () => {
             >
               <button
                 onClick={handleClosePlayer}
-                className="absolute top-4 right-4 text-white hover:text-gold bg-black/60 p-2.5 rounded-full z-20 cursor-pointer transition-all active:scale-95"
+                className="absolute top-4 left-4 text-white hover:text-gold bg-black/60 p-2.5 rounded-full z-20 cursor-pointer transition-all active:scale-95"
+                aria-label="Fechar"
               >
                 <FiX size={20} />
               </button>

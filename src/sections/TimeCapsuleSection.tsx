@@ -236,7 +236,8 @@ export const TimeCapsuleSection: React.FC = () => {
               {/* Close Button */}
               <button
                 onClick={closeMemoryModal}
-                className="absolute top-4 right-4 text-gray-400 hover:text-gold transition-colors duration-250 cursor-pointer"
+                className="absolute top-4 left-4 text-gray-400 hover:text-gold transition-colors duration-250 cursor-pointer"
+                aria-label="Fechar"
               >
                 <FiX size={20} />
               </button>

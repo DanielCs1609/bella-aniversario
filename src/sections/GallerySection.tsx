@@ -208,7 +208,7 @@ export const GallerySection: React.FC = () => {
                 key={photo.id}
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, amount: 0.2 }}
+                viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 0.6 }}
                 onClick={() => openLightbox(index)}
                 className={`group relative overflow-hidden rounded-3xl border border-white/10 cursor-pointer shadow-xl ${

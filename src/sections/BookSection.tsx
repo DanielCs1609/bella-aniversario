@@ -87,17 +87,29 @@ export const BookSection: React.FC = () => {
 
       <div className="z-10 text-center max-w-4xl w-full flex flex-col items-center">
         {/* Section Title */}
-        <div className="mb-24">
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.15 }}
+          transition={{ duration: 0.8 }}
+          className="mb-24"
+        >
           <h2 className="font-cinzel text-xs uppercase tracking-[0.25em] text-gold mb-4">
             O Livro de Isabella
           </h2>
           <p className="font-playfair text-3xl md:text-5xl font-light text-white">
             Os Seus Detalhes Únicos
           </p>
-        </div>
+        </motion.div>
 
         {/* Realistic Book Container */}
-        <div className="relative w-full max-w-md md:max-w-2xl page-flip-container aspect-[3/4] md:aspect-[1.4/1] glass-panel-gold shadow-2xl p-6 md:p-10 flex flex-col md:flex-row gap-6 md:gap-10 overflow-hidden">
+        <motion.div
+          initial={{ opacity: 0, y: 35, scale: 0.98 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, amount: 0.15 }}
+          transition={{ duration: 1.0, ease: 'easeOut' }}
+          className="relative w-full max-w-md md:max-w-2xl page-flip-container aspect-[3/4] md:aspect-[1.4/1] glass-panel-gold shadow-2xl p-6 md:p-10 flex flex-col md:flex-row gap-6 md:gap-10 overflow-hidden"
+        >
           
           {/* Subtle central binder shading for book feeling */}
           <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-r from-black/45 via-gold/15 to-black/45 z-20" />
@@ -135,7 +147,7 @@ export const BookSection: React.FC = () => {
                     {pages[currentPage].title}
                   </h3>
 
-                  <p className="font-playfair text-sm md:text-base italic font-light text-gray-300 leading-relaxed md:leading-loose mb-6">
+                  <p className="font-playfair text-sm md:text-base italic font-light text-gray-200 leading-relaxed md:leading-loose mb-6">
                     "{pages[currentPage].text}"
                   </p>
                 </div>
@@ -146,7 +158,7 @@ export const BookSection: React.FC = () => {
           {/* Decorative page lines texture */}
           <div className="absolute right-2 top-0 bottom-0 w-[4px] bg-white/5" />
           <div className="absolute left-2 top-0 bottom-0 w-[4px] bg-white/5" />
-        </div>
+        </motion.div>
 
         {/* Book Navigation controls */}
         <div className="flex items-center gap-6 mt-8">

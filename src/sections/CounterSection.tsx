@@ -86,7 +86,7 @@ export const CounterSection: React.FC = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1.0, delay: 0.4 }}
-          className="text-xs md:text-sm text-gray-400 font-light max-w-md mx-auto mb-20 md:mb-24"
+          className="text-xs md:text-sm text-gray-200 leading-relaxed font-light max-w-md mx-auto mb-20 md:mb-24"
         >
           Sua presença traz cor, sentido e alegria infinita para a minha vida. Cada segundo seu na Terra é um motivo de festa.
         </motion.p>
@@ -107,7 +107,7 @@ export const CounterSection: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-gold/5 via-transparent to-transparent pointer-events-none" />
 
               {/* Number display with gold gradient */}
-              <span className="font-cinzel text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-white via-gray-100 to-gold tracking-tight mb-2 tabular-nums drop-shadow-[0_2px_10px_rgba(212,175,55,0.25)]">
+              <span className="font-cinzel text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-white via-[#fdf7e7] to-[#e6c173] tracking-tight mb-2 tabular-nums">
                 {String(unit.value).padStart(2, '0')}
               </span>
               

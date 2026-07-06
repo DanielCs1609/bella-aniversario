@@ -195,13 +195,14 @@ export const VideoSection: React.FC = () => {
               {/* Close Button */}
               <button
                 onClick={handleClosePlayer}
-                className="absolute top-4 right-4 text-white hover:text-gold bg-black/50 p-2 rounded-full z-20 cursor-pointer transition-colors"
+                className="absolute top-4 left-4 text-white hover:text-gold bg-black/50 p-2 rounded-full z-20 cursor-pointer transition-colors"
+                aria-label="Fechar"
               >
                 <FiX size={20} />
               </button>
 
               {/* Progress and Sender Info Overlay */}
-              <div className="absolute top-4 left-4 bg-black/50 px-3 py-1.5 rounded-full z-20 text-[10px] font-cinzel tracking-wider text-white">
+              <div className="absolute top-4 left-14 bg-black/50 px-3 py-1.5 rounded-full z-20 text-[10px] font-cinzel tracking-wider text-white">
                 Mensagem {videoMessages.findIndex(v => v.id === activeVideo.id) + 1} de {videoMessages.length} - {activeVideo.name}
               </div>
 

@@ -57,7 +57,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onStart }) => {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="text-center z-10 max-w-2xl"
+        className="text-center z-10 w-full max-w-4xl px-4 md:px-8"
       >
         <motion.p
           variants={itemVariants}
@@ -68,7 +68,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onStart }) => {
 
         <motion.h1
           variants={itemVariants}
-          className="font-cinzel text-5xl md:text-8xl font-black tracking-[0.2em] md:tracking-[0.35em] text-transparent bg-clip-text bg-gradient-to-b from-white via-gray-100 to-gold drop-shadow-[0_0_30px_rgba(212,175,55,0.25)] mb-8 select-none"
+          className="font-cinzel text-[clamp(2.2rem,8.5vw,5.5rem)] font-black tracking-[0.12em] md:tracking-[0.25em] text-transparent bg-clip-text bg-gradient-to-b from-white via-gray-100 to-gold drop-shadow-[0_0_30px_rgba(212,175,55,0.25)] mb-8 select-none leading-none"
         >
           ISABELLA
         </motion.h1>

@@ -24,7 +24,7 @@ export const SecretsOverlay: React.FC = () => {
             {/* Close Button */}
             <button
               onClick={closeMessage}
-              className="absolute top-4 right-4 text-gray-400 hover:text-gold transition-colors duration-200"
+              className="absolute top-4 left-4 text-gray-400 hover:text-gold transition-colors duration-200"
               aria-label="Fechar"
             >
               <FiX size={20} />

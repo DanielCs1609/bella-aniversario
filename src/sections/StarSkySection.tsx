@@ -75,20 +75,32 @@ export const StarSkySection: React.FC = () => {
 
       <div className="z-10 text-center max-w-4xl w-full flex flex-col items-center">
         {/* Title */}
-        <div className="mb-24">
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.15 }}
+          transition={{ duration: 0.8 }}
+          className="mb-24"
+        >
           <h2 className="font-cinzel text-xs uppercase tracking-[0.25em] text-gold mb-4">
             O Universo de Isabella
           </h2>
           <p className="font-playfair text-3xl md:text-5xl font-light text-white">
             Céu de Estrelas
           </p>
-          <p className="text-xs text-gray-400 mt-4 max-w-sm mx-auto">
+          <p className="text-xs text-gray-200 mt-4 max-w-sm mx-auto leading-relaxed">
             Clique nas estrelas brilhantes para revelar as qualidades que me fazem te amar cada dia mais.
           </p>
-        </div>
+        </motion.div>
 
         {/* Constellation Canvas area */}
-        <div className="relative w-full aspect-[4/3] max-w-2xl bg-black/40 rounded-3xl border border-white/5 shadow-2xl overflow-hidden min-h-[350px]">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, amount: 0.15 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="relative w-full aspect-[4/3] max-w-2xl bg-black/40 rounded-3xl border border-white/5 shadow-2xl overflow-hidden min-h-[350px]"
+        >
           
           {/* SVG Constellation connector lines */}
           <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-20">
@@ -151,7 +163,7 @@ export const StarSkySection: React.FC = () => {
               </div>
             );
           })}
-        </div>
+        </motion.div>
 
         {/* Quality text presentation panel */}
         <div className="h-44 w-full max-w-xl mt-8">

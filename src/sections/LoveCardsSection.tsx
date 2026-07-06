@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { audioSystem } from '../utils/audioSystem';
 import { SecretSpot } from '../components/SecretsOverlay';
 import { FaHeart } from 'react-icons/fa';
@@ -75,21 +76,32 @@ export const LoveCardsSection: React.FC = () => {
       <SecretSpot id={12} type="heart" className="top-16 left-1/3 text-lg" />
 
       <div className="z-10 text-center max-w-5xl w-full flex flex-col items-center">
-        {/* Header */}
-        <div className="mb-24">
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.15 }}
+          transition={{ duration: 0.8 }}
+          className="mb-24"
+        >
           <h2 className="font-cinzel text-xs uppercase tracking-[0.25em] text-gold mb-4">
             Motivos para Celebrar
           </h2>
           <p className="font-playfair text-3xl md:text-5xl font-light text-white">
             O que Te Torna Única
           </p>
-          <p className="text-xs text-gray-400 mt-4 max-w-sm mx-auto">
+          <p className="text-xs text-gray-200 mt-4 max-w-sm mx-auto leading-relaxed">
             Toque nos cartões para revelar as virtudes especiais que celebramos em você hoje.
           </p>
-        </div>
+        </motion.div>
 
         {/* 3D Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-4xl">
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.15 }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-4xl"
+        >
           {cardsData.map((card) => {
             const isFlipped = flippedCards.includes(card.id);
 
@@ -129,7 +141,7 @@ export const LoveCardsSection: React.FC = () => {
               </div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-dark-900 to-transparent pointer-events-none" />
     </section>

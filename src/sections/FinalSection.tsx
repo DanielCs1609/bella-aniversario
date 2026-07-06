@@ -30,7 +30,7 @@ export const FinalSection: React.FC = () => {
         variants={textContainer}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.5 }}
+        viewport={{ once: true, amount: 0.15 }}
         className="text-center z-10 max-w-xl space-y-12"
       >
         <motion.p 

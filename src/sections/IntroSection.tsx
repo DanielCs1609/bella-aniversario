@@ -40,7 +40,7 @@ export const IntroSection: React.FC = () => {
           variants={textContainerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.15 }}
           className="flex-1 text-center md:text-left space-y-10 md:space-y-12 max-w-lg"
         >
           <motion.p 
@@ -69,8 +69,8 @@ export const IntroSection: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, scale: 0.95, filter: 'blur(10px)' }}
           whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 1.8, delay: 4.0, ease: 'easeOut' }} // Reveal after text finished
+          viewport={{ once: true, amount: 0.15 }}
+          transition={{ duration: 1.8, delay: 1.5, ease: 'easeOut' }} // Reveal early for better visual flow
           className="flex-1 flex justify-center items-center relative"
         >
           {/* Glass frame */}
