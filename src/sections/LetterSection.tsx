@@ -110,6 +110,9 @@ export const LetterSection: React.FC = () => {
                 onClick={() => {
                   setIsOpen(false);
                   audioSystem.playClick();
+                  setTimeout(() => {
+                    document.getElementById('final')?.scrollIntoView({ behavior: 'smooth' });
+                  }, 500);
                 }}
                 className="absolute top-4 right-4 p-2 bg-[#fdfbf7] hover:bg-gold/15 text-[#2c2621] rounded-full border border-gold/20 transition-colors z-20 cursor-pointer active:scale-95 flex items-center justify-center"
                 title="Fechar Carta"

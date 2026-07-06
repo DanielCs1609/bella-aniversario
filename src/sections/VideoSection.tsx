@@ -101,6 +101,14 @@ export const VideoSection: React.FC = () => {
     audioSystem.playClick();
   };
 
+  const handleCloseCelebration = () => {
+    setShowCelebration(false);
+    audioSystem.playClick();
+    setTimeout(() => {
+      document.getElementById('letter')?.scrollIntoView({ behavior: 'smooth' });
+    }, 500);
+  };
+
   return (
     <section className="relative w-full min-h-screen bg-dark-900 px-6 py-32 md:py-40 flex flex-col items-center justify-center overflow-hidden">
       {/* Hidden Secret Spot 14 */}
@@ -215,7 +223,7 @@ export const VideoSection: React.FC = () => {
       <AnimatePresence>
         {showCelebration && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md">
-            <div className="absolute inset-0" onClick={() => setShowCelebration(false)} />
+            <div className="absolute inset-0" onClick={handleCloseCelebration} />
             
             <motion.div
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
@@ -231,10 +239,7 @@ export const VideoSection: React.FC = () => {
                 "Você assistiu a todas as mensagens enviadas pelas pessoas que te amam. Que o amor de todos nós te proteja e te traga um aniversário inesquecível!"
               </p>
               <button
-                onClick={() => {
-                  setShowCelebration(false);
-                  audioSystem.playClick();
-                }}
+                onClick={handleCloseCelebration}
                 className="btn-premium"
               >
                 Concluir Memórias

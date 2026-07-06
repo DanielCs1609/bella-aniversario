@@ -20,10 +20,17 @@ export const TimeCapsuleSection: React.FC = () => {
 
 
   const handleOpenChest = () => {
-    setIsOpen(!isOpen);
+    const nextState = !isOpen;
+    setIsOpen(nextState);
     audioSystem.playLetterOpen();
     if ('vibrate' in navigator) {
       navigator.vibrate([80, 50, 80]);
+    }
+    // If we are closing the chest, auto scroll to next section: starsky
+    if (!nextState) {
+      setTimeout(() => {
+        document.getElementById('starsky')?.scrollIntoView({ behavior: 'smooth' });
+      }, 500);
     }
   };
 

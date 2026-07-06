@@ -48,44 +48,43 @@ function App() {
         <HeroSection onStart={handleStartScroll} />
 
         {/* Tela 2: Fade-in intro and portrait */}
-        <IntroSection />
+        <div id="intro"><IntroSection /></div>
 
         {/* Live counter (how long we have been together) */}
-        <CounterSection />
+        <div id="counter"><CounterSection /></div>
 
         {/* Luminescent Timeline Connectors */}
-        <TimelineSection />
+        <div id="timeline"><TimelineSection /></div>
 
         {/* Mosaic photo gallery with Touch-friendly lightbox */}
-        <GallerySection />
+        <div id="gallery"><GallerySection /></div>
 
         {/* Interactable chest holding first memories */}
-        <TimeCapsuleSection />
+        <div id="capsule"><TimeCapsuleSection /></div>
 
         {/* Interactive Constellation quality map */}
-        <StarSkySection />
+        <div id="starsky"><StarSkySection /></div>
 
         {/* 3D flip interactive memories book */}
-        <BookSection />
-
+        <div id="book"><BookSection /></div>
 
         {/* 3D rotate-on-hover Love card grid */}
-        <LoveCardsSection />
+        <div id="love-cards"><LoveCardsSection /></div>
 
         {/* Glowing road mapping our dreams */}
-        <FutureSection />
+        <div id="future"><FutureSection /></div>
 
         {/* Carousel messages overlay player */}
-        <VideoSection />
+        <div id="videos"><VideoSection /></div>
 
         {/* Wax-sealed envelope love letter */}
-        <LetterSection />
+        <div id="letter"><LetterSection /></div>
 
         {/* Cinematic dark text transitions & glowing heart */}
-        <FinalSection />
+        <div id="final"><FinalSection /></div>
 
         {/* Surprise video & falling stars confetti blast */}
-        <SurpriseSection />
+        <div id="surprise"><SurpriseSection /></div>
 
       </main>
     </SecretsProvider>

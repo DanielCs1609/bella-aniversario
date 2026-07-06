@@ -60,6 +60,10 @@ export const BookSection: React.FC = () => {
         setCurrentPage(currentPage + 1);
         setIsFlipped(false);
       }, 400); // sync with animation half-point
+    } else {
+      audioSystem.playClick();
+      if ('vibrate' in navigator) navigator.vibrate(40);
+      document.getElementById('love-cards')?.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -163,11 +167,8 @@ export const BookSection: React.FC = () => {
           
           <button
             onClick={handleNext}
-            disabled={currentPage === pages.length - 1}
-            className={`p-3.5 rounded-full border border-gold/30 text-gold transition-all duration-300 transform ${
-              currentPage === pages.length - 1 ? 'opacity-35 cursor-not-allowed' : 'hover:bg-gold/15 active:scale-90 cursor-pointer hover:border-gold shadow-[0_4px_12px_rgba(212,175,55,0.15)]'
-            }`}
-            title="Próxima Página"
+            className="p-3.5 rounded-full border border-gold/30 text-gold transition-all duration-300 transform hover:bg-gold/15 active:scale-90 cursor-pointer hover:border-gold shadow-[0_4px_12px_rgba(212,175,55,0.15)]"
+            title={currentPage === pages.length - 1 ? "Próxima Seção" : "Próxima Página"}
           >
             <FiChevronRight size={20} />
           </button>
