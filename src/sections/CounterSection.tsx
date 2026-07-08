@@ -7,7 +7,7 @@ export const CounterSection: React.FC = () => {
   // COLOQUE A DATA DE NASCIMENTO DA ISABELLA ABAIXO (Formato: AAAA-MM-DDTHH:MM:SS)
   // Exemplo: 15 de Outubro de 2002, às 08:30 -> '2002-10-15T08:30:00'
   // =========================================================================
-  const START_DATE = new Date('2002-10-15T00:00:00').getTime();
+  const START_DATE = new Date('2007-07-24T00:00:00').getTime();
 
   const [timeElapsed, setTimeElapsed] = useState({
     days: 0,
