@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import IsabellaPortrait from '../assets/isabella_portrait.png';
+import IsabellaPortrait from '../assets/intro/isabella_portrait.png';
 import { SecretSpot } from '../components/SecretsOverlay';
 
 export const IntroSection: React.FC = () => {

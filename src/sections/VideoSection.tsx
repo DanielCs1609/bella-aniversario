@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import ReactPlayer from 'react-player';
 import { audioSystem } from '../utils/audioSystem';
 import { SecretSpot } from '../components/SecretsOverlay';
 import { FiPlay, FiCheckCircle, FiX } from 'react-icons/fi';
-
-const Player = ReactPlayer as any;
 
 interface VideoMessage {
   id: number;
@@ -20,36 +17,11 @@ export const VideoSection: React.FC = () => {
   const videoMessages: VideoMessage[] = [
     {
       id: 1,
-      name: 'Maria (Mãe)',
-      relation: 'Mãe',
+      name: 'Maria Fernanda',
+      relation: 'Irmã',
       quote: 'Você é a minha maior felicidade, minha menina de ouro. Te amo daqui até a eternidade!',
-      photoUrl: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80',
-      // High reliability fast loading sample video
-      videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4'
-    },
-    {
-      id: 2,
-      name: 'Mariana',
-      relation: 'Melhor Amiga',
-      quote: 'Parabéns para a dona das minhas melhores risadas! Que o seu ano seja tão lindo quanto sua alma.',
-      photoUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80',
-      videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4'
-    },
-    {
-      id: 3,
-      name: 'Lucas (Irmão)',
-      relation: 'Irmão',
-      quote: 'Orgulho demais de te ver crescer e realizar seus planos. Conte comigo pra tudo, sempre.',
-      photoUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80',
-      videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4'
-    },
-    {
-      id: 4,
-      name: 'Roberto (Pai)',
-      relation: 'Pai',
-      quote: 'Minha filha amada, que Deus abençoe seu caminho. Estarei sempre aqui batendo palmas para você.',
-      photoUrl: 'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=300&q=80',
-      videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4'
+      photoUrl: '/capaMaria.jpg',
+      videoUrl: '/Maria.mp4'
     }
   ];
 
@@ -128,55 +100,57 @@ export const VideoSection: React.FC = () => {
           </p>
         </div>
 
-        {/* Video Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-4xl">
-          {videoMessages.map((msg) => {
-            const isWatched = watchedVideos.includes(msg.id);
+        {/* Video Cards Centered Grid */}
+        <div className="flex justify-center w-full">
+          <div className="w-full max-w-sm">
+            {videoMessages.map((msg) => {
+              const isWatched = watchedVideos.includes(msg.id);
 
-            return (
-              <motion.div
-                key={msg.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="relative glass-panel p-5 flex flex-col justify-between items-center text-center shadow-lg hover:border-gold/30 transition-all duration-300 transform active:scale-[0.98] group"
-              >
-                {/* Watched Badge */}
-                {isWatched && (
-                  <span className="absolute top-3 right-3 text-gold text-sm" title="Visto">
-                    <FiCheckCircle />
-                  </span>
-                )}
-
-                {/* Portrait Circle */}
-                <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-gold/30 mb-4 group-hover:border-gold group-hover:scale-105 transition-all duration-300">
-                  <img src={msg.photoUrl} alt={msg.name} className="w-full h-full object-cover" />
-                </div>
-
-                <div className="space-y-1 mb-6">
-                  <h3 className="font-cinzel text-xs font-bold text-white tracking-wider">
-                    {msg.name}
-                  </h3>
-                  <span className="text-[9px] uppercase tracking-widest text-gold font-medium">
-                    {msg.relation}
-                  </span>
-                  <p className="text-gray-400 font-light text-xs italic leading-relaxed pt-3">
-                    "{msg.quote}"
-                  </p>
-                </div>
-
-                {/* Watch Button */}
-                <button
-                  onClick={() => handlePlayVideo(msg)}
-                  className="px-6 py-2.5 rounded-full bg-gold/10 border border-gold/30 text-gold hover:bg-gold hover:text-dark-900 font-cinzel text-[10px] tracking-widest uppercase transition-all duration-300 transform active:scale-95 flex items-center gap-1.5 cursor-pointer hover:shadow-[0_0_15px_rgba(212,175,55,0.3)] shadow-[0_4px_10px_rgba(0,0,0,0.15)]"
+              return (
+                <motion.div
+                  key={msg.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                  className="relative glass-panel p-5 flex flex-col justify-between items-center text-center shadow-lg hover:border-gold/30 transition-all duration-300 transform active:scale-[0.98] group"
                 >
-                  <FiPlay />
-                  Assistir
-                </button>
-              </motion.div>
-            );
-          })}
+                  {/* Watched Badge */}
+                  {isWatched && (
+                    <span className="absolute top-3 right-3 text-gold text-sm" title="Visto">
+                      <FiCheckCircle />
+                    </span>
+                  )}
+
+                  {/* Portrait Circle */}
+                  <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-gold/30 mb-4 group-hover:border-gold group-hover:scale-105 transition-all duration-300">
+                    <img src={msg.photoUrl} alt={msg.name} className="w-full h-full object-cover" />
+                  </div>
+
+                  <div className="space-y-1 mb-6">
+                    <h3 className="font-cinzel text-xs font-bold text-white tracking-wider">
+                      {msg.name}
+                    </h3>
+                    <span className="text-[9px] uppercase tracking-widest text-gold font-medium">
+                      {msg.relation}
+                    </span>
+                    <p className="text-gray-400 font-light text-xs italic leading-relaxed pt-3">
+                      "{msg.quote}"
+                    </p>
+                  </div>
+
+                  {/* Watch Button */}
+                  <button
+                    onClick={() => handlePlayVideo(msg)}
+                    className="px-6 py-2.5 rounded-full bg-gold/10 border border-gold/30 text-gold hover:bg-gold hover:text-dark-900 font-cinzel text-[10px] tracking-widest uppercase transition-all duration-300 transform active:scale-95 flex items-center gap-1.5 cursor-pointer hover:shadow-[0_0_15px_rgba(212,175,55,0.3)] shadow-[0_4px_10px_rgba(0,0,0,0.15)]"
+                  >
+                    <FiPlay />
+                    Assistir
+                  </button>
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
       </div>
 
@@ -206,13 +180,12 @@ export const VideoSection: React.FC = () => {
                 Mensagem {videoMessages.findIndex(v => v.id === activeVideo.id) + 1} de {videoMessages.length} - {activeVideo.name}
               </div>
 
-              {/* React Player integration */}
-              <Player
-                url={activeVideo.videoUrl}
-                playing
+              {/* Native HTML5 Video Player */}
+              <video
+                src={activeVideo.videoUrl}
+                autoPlay
                 controls
-                width="100%"
-                height="100%"
+                className="w-full h-full object-contain"
                 onEnded={handleVideoEnded}
               />
             </motion.div>

@@ -3,9 +3,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { audioSystem } from '../utils/audioSystem';
 import { SecretSpot } from '../components/SecretsOverlay';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
-import FirstDateImg from '../assets/first_date.png';
-import FirstTripImg from '../assets/first_trip.png';
-import IsabellaPortrait from '../assets/isabella_portrait.png';
+import FirstDateImg from '../assets/livro/first_date.png';
+import FirstTripImg from '../assets/livro/first_trip.png';
+import IsabellaPortrait from '../assets/livro/isabella_portrait.png';
 
 interface BookPage {
   id: number;

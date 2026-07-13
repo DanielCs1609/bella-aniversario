@@ -1,9 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { SecretSpot } from '../components/SecretsOverlay';
-import FirstDateImg from '../assets/first_date.png';
-import FirstTripImg from '../assets/first_trip.png';
-import IsabellaPortrait from '../assets/isabella_portrait.png';
+import IsabellaBaby from '../assets/jornada/isabella_baby.png';
+import FirstDateImg from '../assets/jornada/first_date.png';
+import FirstTripImg from '../assets/jornada/first_trip.png';
+import IsabellaPortrait from '../assets/jornada/isabella_portrait.png';
 
 interface TimelineMoment {
   id: number;
@@ -21,7 +22,7 @@ export const TimelineSection: React.FC = () => {
       date: 'A Essência',
       title: 'A Luz que Você Irradia',
       description: 'Desde que chegou ao mundo, você trouxe consigo uma doçura e uma energia única. É impossível passar por você e não ser tocado pela sua luz e pelo seu carisma natural.',
-      gradient: 'from-blue-900/40 to-indigo-900/40'
+      image: IsabellaBaby
     },
     {
       id: 2,

@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiX, FiZoomIn, FiZoomOut, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import { SecretSpot } from '../components/SecretsOverlay';
-import FirstDateImg from '../assets/first_date.png';
-import FirstTripImg from '../assets/first_trip.png';
-import IsabellaPortrait from '../assets/isabella_portrait.png';
+import FirstDateImg from '../assets/galeria/first_date.png';
+import FirstTripImg from '../assets/galeria/first_trip.png';
+import IsabellaPortrait from '../assets/galeria/isabella_portrait.png';
 
 interface PhotoItem {
   id: number;
