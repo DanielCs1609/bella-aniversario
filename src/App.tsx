@@ -16,7 +16,6 @@ import { FutureSection } from './sections/FutureSection';
 import { VideoSection } from './sections/VideoSection';
 import { LetterSection } from './sections/LetterSection';
 import { FinalSection } from './sections/FinalSection';
-import { SurpriseSection } from './sections/SurpriseSection';
 import './App.css';
 
 function App() {
@@ -82,9 +81,6 @@ function App() {
 
         {/* Cinematic dark text transitions & glowing heart */}
         <div id="final"><FinalSection /></div>
-
-        {/* Surprise video & falling stars confetti blast */}
-        <div id="surprise"><SurpriseSection /></div>
 
       </main>
     </SecretsProvider>

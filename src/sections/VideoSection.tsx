@@ -4,6 +4,15 @@ import { audioSystem } from '../utils/audioSystem';
 import { SecretSpot } from '../components/SecretsOverlay';
 import { FiPlay, FiCheckCircle, FiX } from 'react-icons/fi';
 
+import AnaJuliaVideo from '../assets/videos/AnaJulia.mp4';
+import GabrielVideo from '../assets/videos/Gabriel.mp4';
+import JuliaVianaVideo from '../assets/videos/JuliaViana.mp4';
+import MariaVideo from '../assets/videos/Maria.mp4';
+
+import CapaAnaJulia from '../assets/fotosCapa/capaAnaJulia.jpg';
+import CapaJuliaViana from '../assets/fotosCapa/capaJuliaViana.png';
+import CapaMaria from '../assets/fotosCapa/capaMaria.jpg';
+
 interface VideoMessage {
   id: number;
   name: string;
@@ -19,9 +28,33 @@ export const VideoSection: React.FC = () => {
       id: 1,
       name: 'Maria Fernanda',
       relation: 'Irmã',
-      quote: 'Você é a minha maior felicidade, minha menina de ouro. Te amo daqui até a eternidade!',
-      photoUrl: '/capaMaria.jpg',
-      videoUrl: '/Maria.mp4'
+      quote: 'Ele tem grandes projetos para sua vida.',
+      photoUrl: CapaMaria,
+      videoUrl: MariaVideo
+    },
+    {
+      id: 2,
+      name: 'Ana Júlia',
+      relation: 'Irmã',
+      quote: 'Lembre-se que você é amada por todos nós.',
+      photoUrl: CapaAnaJulia,
+      videoUrl: AnaJuliaVideo
+    },
+    {
+      id: 3,
+      name: 'Gabriel',
+      relation: 'Irmão',
+      quote: 'Você deu orgulho pra família toda.',
+      photoUrl: '',
+      videoUrl: GabrielVideo
+    },
+    {
+      id: 4,
+      name: 'Júlia Viana',
+      relation: 'Amiga',
+      quote: 'Que você continue sendo essa menina maravilhosa, incrível que você é.',
+      photoUrl: CapaJuliaViana,
+      videoUrl: JuliaVianaVideo
     }
   ];
 
@@ -102,7 +135,7 @@ export const VideoSection: React.FC = () => {
 
         {/* Video Cards Centered Grid */}
         <div className="flex justify-center w-full">
-          <div className="w-full max-w-sm">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-6xl">
             {videoMessages.map((msg) => {
               const isWatched = watchedVideos.includes(msg.id);
 
@@ -123,8 +156,14 @@ export const VideoSection: React.FC = () => {
                   )}
 
                   {/* Portrait Circle */}
-                  <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-gold/30 mb-4 group-hover:border-gold group-hover:scale-105 transition-all duration-300">
-                    <img src={msg.photoUrl} alt={msg.name} className="w-full h-full object-cover" />
+                  <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-gold/30 mb-4 group-hover:border-gold group-hover:scale-105 transition-all duration-300 flex items-center justify-center bg-gradient-to-br from-gold/20 to-gold/5">
+                    {msg.photoUrl ? (
+                      <img src={msg.photoUrl} alt={msg.name} className="w-full h-full object-cover" />
+                    ) : (
+                      <span className="font-cinzel text-2xl font-bold text-gold select-none">
+                        {msg.name.charAt(0)}
+                      </span>
+                    )}
                   </div>
 
                   <div className="space-y-1 mb-6">
