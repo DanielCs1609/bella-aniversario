@@ -7,7 +7,6 @@ import { HeroSection } from './sections/HeroSection';
 import { IntroSection } from './sections/IntroSection';
 import { CounterSection } from './sections/CounterSection';
 import { TimelineSection } from './sections/TimelineSection';
-import { GallerySection } from './sections/GallerySection';
 import { StarSkySection } from './sections/StarSkySection';
 import { VideoSection } from './sections/VideoSection';
 import { LetterSection } from './sections/LetterSection';
@@ -50,9 +49,6 @@ function App() {
 
         {/* Luminescent Timeline Connectors */}
         <div id="timeline"><TimelineSection /></div>
-
-        {/* Mosaic photo gallery with Touch-friendly lightbox */}
-        <div id="gallery"><GallerySection /></div>
 
         {/* Interactive Constellation quality map */}
         <div id="starsky"><StarSkySection /></div>
