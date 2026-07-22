@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import { SecretsProvider } from './context/SecretsContext';
 import { SecretsOverlay } from './components/SecretsOverlay';
 import { StarryBackground } from './components/StarryBackground';
@@ -11,9 +12,36 @@ import { StarSkySection } from './sections/StarSkySection';
 import { VideoSection } from './sections/VideoSection';
 import { LetterSection } from './sections/LetterSection';
 import { FinalSection } from './sections/FinalSection';
+import { audioSystem } from './utils/audioSystem';
 import './App.css';
 
 function App() {
+  useEffect(() => {
+    // Try to autoplay immediately
+    audioSystem.playMusic();
+
+    const startAudioOnInteraction = () => {
+      audioSystem.playMusic();
+      // Remove listeners after first interaction
+      window.removeEventListener('click', startAudioOnInteraction);
+      window.removeEventListener('touchstart', startAudioOnInteraction);
+      window.removeEventListener('keydown', startAudioOnInteraction);
+      window.removeEventListener('scroll', startAudioOnInteraction);
+    };
+
+    window.addEventListener('click', startAudioOnInteraction);
+    window.addEventListener('touchstart', startAudioOnInteraction);
+    window.addEventListener('keydown', startAudioOnInteraction);
+    window.addEventListener('scroll', startAudioOnInteraction);
+
+    return () => {
+      window.removeEventListener('click', startAudioOnInteraction);
+      window.removeEventListener('touchstart', startAudioOnInteraction);
+      window.removeEventListener('keydown', startAudioOnInteraction);
+      window.removeEventListener('scroll', startAudioOnInteraction);
+    };
+  }, []);
+
   const handleStartScroll = () => {
     const introElement = document.getElementById('intro');
     if (introElement) {
