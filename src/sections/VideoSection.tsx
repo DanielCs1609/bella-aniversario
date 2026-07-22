@@ -10,7 +10,9 @@ import CapaAnaJulia from '../assets/fotosCapa/capaAnaJulia.jpg';
 import CapaAngelo from '../assets/fotosCapa/capaAngelo.jpg';
 import CapaCriancas from '../assets/fotosCapa/capaCrianças.jpg';
 import CapaDaniel from '../assets/fotosCapa/capaDaniel.jpg';
+import CapaDeia from '../assets/fotosCapa/capaDeia.jpg';
 import CapaJuliaViana from '../assets/fotosCapa/capaJuliaViana.png';
+import CapaLeticia from '../assets/fotosCapa/capaLeticia.jpg';
 import CapaMaria from '../assets/fotosCapa/capaMaria.jpg';
 import CapaPatricia from '../assets/fotosCapa/capaPatricia.jpg';
 import CapaRebeca from '../assets/fotosCapa/capaRebeca.jpg';
@@ -127,6 +129,22 @@ export const VideoSection: React.FC = () => {
       quote: 'Você conseguiu fazer uma coisa simples ficar cada vez mais importante e especial',
       photoUrl: CapaDaniel,
       videoUrl: 'https://youtu.be/RYjAU2e_Fq8'
+    },
+    {
+      id: 12,
+      name: 'Deia',
+      relation: 'Sogra',
+      quote: 'Que seu novo ciclo seja repleto de amor, paz e realizações. Parabéns, Bella!',
+      photoUrl: CapaDeia,
+      videoUrl: 'https://youtu.be/7-I-Gcw9sS8'
+    },
+    {
+      id: 13,
+      name: 'Letícia',
+      relation: 'Cunhada',
+      quote: 'Te desejo toda a felicidade do mundo. Que Deus te abençoe sempre!',
+      photoUrl: CapaLeticia,
+      videoUrl: 'https://youtu.be/-PWfLsCFw-U'
     }
   ];
 
