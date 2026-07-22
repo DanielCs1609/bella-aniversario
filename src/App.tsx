@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { SecretsProvider } from './context/SecretsContext';
 import { SecretsOverlay } from './components/SecretsOverlay';
 import { StarryBackground } from './components/StarryBackground';
