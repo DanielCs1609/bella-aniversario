@@ -2,9 +2,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { SecretSpot } from '../components/SecretsOverlay';
 import IsabellaBaby from '../assets/jornada/isabella_baby.png';
-import FirstDateImg from '../assets/jornada/first_date.png';
-import FirstTripImg from '../assets/jornada/first_trip.png';
-import IsabellaPortrait from '../assets/jornada/isabella_portrait.png';
+import FormaturaIsa from '../assets/jornada/formaturaIsa.jpg';
+import FamiliaIsa from '../assets/jornada/familiaIsa.jpg';
+import IsaSorriso from '../assets/jornada/IsaSorriso.jpg';
+import BelaPaisagem from '../assets/jornada/BelaPaisagem.jpg';
 
 interface TimelineMoment {
   id: number;
@@ -29,28 +30,28 @@ export const TimelineSection: React.FC = () => {
       date: 'A Determinação',
       title: 'Sua Força Admirável',
       description: 'Uma das coisas que mais me dão orgulho é ver a mulher forte, independente e focada que você se tornou. Você encara qualquer desafio de cabeça erguida e corre atrás dos seus sonhos com uma garra inspiradora.',
-      image: FirstDateImg
+      image: FormaturaIsa
     },
     {
       id: 3,
       date: 'A Empatia',
       title: 'Um Coração Puro',
       description: 'A sua generosidade e a forma atenta como você cuida de quem ama são raras. Você coloca amor e dedicação em cada pequeno detalhe, tornando a vida de todos ao seu redor mais leve e feliz.',
-      gradient: 'from-amber-900/40 to-yellow-950/40'
+      image: FamiliaIsa
     },
     {
       id: 4,
       date: 'A Alegria',
       title: 'O Seu Sorriso Lindo',
-      description: 'O som da sua risada é capaz de mudar o meu dia inteiro. O seu bom humor espontâneo e o seu jeito alegre de levar a vida são contagiantes e fazem qualquer momento parecer mágico.',
-      image: IsabellaPortrait
+      description: 'O som da sua risada é capaz de mudar o meu dia inteiro. O seu bom humor duvidoso e espontâneo e o seu jeito alegre de levar a vida são contagiantes e fazem qualquer momento parecer mágico.',
+      image: IsaSorriso
     },
     {
       id: 5,
       date: 'O Novo Ciclo',
       title: 'Celebrando Você',
       description: 'Hoje iniciamos um novo capítulo da sua história. Desejo que seu novo ano seja espetacular, cheio de conquistas, saúde e paz. E que eu possa estar sempre ao seu lado celebrando e apoiando cada passo seu.',
-      image: FirstTripImg
+      image: BelaPaisagem
     }
   ];
 
