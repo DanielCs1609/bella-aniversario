@@ -4,16 +4,6 @@ import { audioSystem } from '../utils/audioSystem';
 import { SecretSpot } from '../components/SecretsOverlay';
 import { FiPlay, FiCheckCircle, FiX } from 'react-icons/fi';
 
-import AnaAvóVideo from '../assets/videos/AnaAvó.mp4';
-import AnaClaraVideo from '../assets/videos/AnaClara.mp4';
-import AnaJuliaVideo from '../assets/videos/AnaJulia.mp4';
-import IrmasVideo from '../assets/videos/Angelica, Alice e Aline Irmãs.mp4';
-import AngeloVideo from '../assets/videos/AngeloPai.mp4';
-import DanielVideo from '../assets/videos/Daniel.mp4';
-import GabrielVideo from '../assets/videos/Gabriel.mp4';
-import JuliaVianaVideo from '../assets/videos/JuliaViana.mp4';
-import MariaVideo from '../assets/videos/Maria.mp4';
-import PatriciaVideo from '../assets/videos/PatriciaMãe.mp4';
 import RebecaVideo from '../assets/videos/RebecaAmiga.mov';
 
 import CapaAnaAvó from '../assets/fotosCapa/capaAnaAvó.jpg';
@@ -44,7 +34,7 @@ export const VideoSection: React.FC = () => {
       relation: 'Amiga',
       quote: 'Menina que traz alegria onde está.',
       photoUrl: CapaJuliaViana,
-      videoUrl: JuliaVianaVideo
+      videoUrl: 'https://youtu.be/bdDhSnm0k8U'
     },
     {
       id: 2,
@@ -52,7 +42,7 @@ export const VideoSection: React.FC = () => {
       relation: 'Amiga',
       quote: 'Parabéns, Bella! Que seu dia seja tão lindo e especial quanto você é.',
       photoUrl: CapaAnaClara,
-      videoUrl: AnaClaraVideo
+      videoUrl: 'https://youtu.be/XMPMU5HGsK0'
     },
     {
       id: 3,
@@ -68,7 +58,7 @@ export const VideoSection: React.FC = () => {
       relation: 'Irmã',
       quote: 'Ele tem grandes projetos para sua vida.',
       photoUrl: CapaMaria,
-      videoUrl: MariaVideo
+      videoUrl: 'https://youtu.be/q1jbuyFguCU'
     },
     {
       id: 5,
@@ -76,7 +66,7 @@ export const VideoSection: React.FC = () => {
       relation: 'Irmã',
       quote: 'É uma honra ser sua irmã.',
       photoUrl: CapaAnaJulia,
-      videoUrl: AnaJuliaVideo
+      videoUrl: 'https://youtu.be/-cHmseLZX_8'
     },
     {
       id: 6,
@@ -84,7 +74,7 @@ export const VideoSection: React.FC = () => {
       relation: 'Irmão',
       quote: 'Você deu orgulho pra família toda.',
       photoUrl: '',
-      videoUrl: GabrielVideo
+      videoUrl: 'https://youtu.be/CBe7HDBz8Ng'
     },
     {
       id: 7,
@@ -92,7 +82,7 @@ export const VideoSection: React.FC = () => {
       relation: 'Irmãs',
       quote: 'Jesus cuida de vocês.',
       photoUrl: CapaCriancas,
-      videoUrl: IrmasVideo
+      videoUrl: 'https://youtu.be/4wNRxs51ibQ'
     },
     {
       id: 8,
@@ -100,7 +90,7 @@ export const VideoSection: React.FC = () => {
       relation: 'Avó',
       quote: 'Você é a minha menina linda, doce que tá no meu coração.',
       photoUrl: CapaAnaAvó,
-      videoUrl: AnaAvóVideo
+      videoUrl: 'https://youtu.be/I_O9q7r6CGM'
     },
     {
       id: 9,
@@ -108,7 +98,7 @@ export const VideoSection: React.FC = () => {
       relation: 'Pai',
       quote: 'Você vai ser uma mulher muito vitoriosa.',
       photoUrl: CapaAngelo,
-      videoUrl: AngeloVideo
+      videoUrl: 'https://youtu.be/yrYCjc8l5rc'
     },
     {
       id: 10,
@@ -116,7 +106,7 @@ export const VideoSection: React.FC = () => {
       relation: 'Mãe',
       quote: 'Que seu caminho seja sempre iluminado de amor e paz. Eu te amo muito, minha filha!',
       photoUrl: CapaPatricia,
-      videoUrl: PatriciaVideo
+      videoUrl: 'https://youtu.be/jzHxtvc2Y48'
     },
     {
       id: 11,
@@ -124,7 +114,7 @@ export const VideoSection: React.FC = () => {
       relation: 'Namorado',
       quote: 'Você conseguiu fazer uma coisa simples ficar cada vez mais importante e especial',
       photoUrl: CapaDaniel,
-      videoUrl: DanielVideo
+      videoUrl: 'https://youtu.be/RYjAU2e_Fq8'
     }
   ];
 
@@ -292,14 +282,29 @@ export const VideoSection: React.FC = () => {
                 Mensagem {videoMessages.findIndex(v => v.id === activeVideo.id) + 1} de {videoMessages.length} - {activeVideo.name}
               </div>
 
-              {/* Native HTML5 Video Player */}
-              <video
-                src={activeVideo.videoUrl}
-                autoPlay
-                controls
-                className="w-full h-full object-contain"
-                onEnded={handleVideoEnded}
-              />
+              {/* Native HTML5 Video Player or YouTube Embed */}
+              {activeVideo.videoUrl.includes('youtu.be') || activeVideo.videoUrl.includes('youtube.com') ? (
+                <iframe
+                  src={`https://www.youtube.com/embed/${
+                    activeVideo.videoUrl.includes('youtu.be/') 
+                      ? activeVideo.videoUrl.split('youtu.be/')[1].split('?')[0] 
+                      : activeVideo.videoUrl.split('v=')[1].split('&')[0]
+                  }?autoplay=1&rel=0`}
+                  title={activeVideo.name}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
+              ) : (
+                <video
+                  src={activeVideo.videoUrl}
+                  autoPlay
+                  controls
+                  className="w-full h-full object-contain"
+                  onEnded={handleVideoEnded}
+                />
+              )}
             </motion.div>
           </div>
         )}
