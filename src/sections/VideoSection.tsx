@@ -116,22 +116,6 @@ export const VideoSection: React.FC = () => {
     },
     {
       id: 10,
-      name: 'Patrícia',
-      relation: 'Mãe',
-      quote: 'Que seu caminho seja sempre iluminado de amor e paz. Eu te amo muito, minha filha!',
-      photoUrl: CapaPatricia,
-      videoUrl: 'https://youtu.be/jzHxtvc2Y48'
-    },
-    {
-      id: 11,
-      name: 'Daniel',
-      relation: 'Namorado',
-      quote: 'Você conseguiu fazer uma coisa simples ficar cada vez mais importante e especial',
-      photoUrl: CapaDaniel,
-      videoUrl: 'https://youtu.be/RYjAU2e_Fq8'
-    },
-    {
-      id: 12,
       name: 'Deia',
       relation: 'Sogra',
       quote: 'Que seu novo ciclo seja repleto de amor, paz e realizações. Parabéns, Bella!',
@@ -139,12 +123,28 @@ export const VideoSection: React.FC = () => {
       videoUrl: 'https://youtu.be/7-I-Gcw9sS8'
     },
     {
-      id: 13,
+      id: 11,
       name: 'Letícia',
       relation: 'Cunhada',
       quote: 'Te desejo toda a felicidade do mundo. Que Deus te abençoe sempre!',
       photoUrl: CapaLeticia,
       videoUrl: 'https://youtu.be/-PWfLsCFw-U'
+    },
+    {
+      id: 12,
+      name: 'Patrícia',
+      relation: 'Mãe',
+      quote: 'Que seu caminho seja sempre iluminado de amor e paz. Eu te amo muito, minha filha!',
+      photoUrl: CapaPatricia,
+      videoUrl: 'https://youtu.be/jzHxtvc2Y48'
+    },
+    {
+      id: 13,
+      name: 'Daniel',
+      relation: 'Namorado',
+      quote: 'Você conseguiu fazer uma coisa simples ficar cada vez mais importante e especial',
+      photoUrl: CapaDaniel,
+      videoUrl: 'https://youtu.be/RYjAU2e_Fq8'
     }
   ];
 
