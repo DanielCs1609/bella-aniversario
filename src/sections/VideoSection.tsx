@@ -124,6 +124,7 @@ export const VideoSection: React.FC = () => {
 
   const handlePlayVideo = (msg: VideoMessage) => {
     setActiveVideo(msg);
+    audioSystem.stopMusic(); // Stop background music when playing a video
     audioSystem.playVideoSound();
     if ('vibrate' in navigator) {
       navigator.vibrate(40);
@@ -147,6 +148,7 @@ export const VideoSection: React.FC = () => {
     if (updatedWatched.length === videoMessages.length) {
       setShowCelebration(true);
       setActiveVideo(null);
+      audioSystem.playMusic(); // Resume background music on completion
       return;
     }
 
@@ -164,11 +166,13 @@ export const VideoSection: React.FC = () => {
   const handleClosePlayer = () => {
     setActiveVideo(null);
     audioSystem.playClick();
+    audioSystem.playMusic(); // Resume background music when closing player
   };
 
   const handleCloseCelebration = () => {
     setShowCelebration(false);
     audioSystem.playClick();
+    audioSystem.playMusic(); // Resume background music when closing celebration
     setTimeout(() => {
       document.getElementById('letter')?.scrollIntoView({ behavior: 'smooth' });
     }, 500);

@@ -40,6 +40,11 @@ class AudioSystem {
           console.warn('Failed to resume AudioContext on subsequent call:', e);
         }
       }
+      if (this.musicGain) {
+        const now = this.ctx.currentTime;
+        this.musicGain.gain.setValueAtTime(this.musicGain.gain.value, now);
+        this.musicGain.gain.linearRampToValueAtTime(0.2, now + 2.0); // Fade volume back to 0.2
+      }
       if (!this.isMusicPlaying) {
         this.audioHtml.play().then(() => {
           this.isMusicPlaying = true;
