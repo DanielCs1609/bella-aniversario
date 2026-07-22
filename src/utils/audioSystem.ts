@@ -28,24 +28,30 @@ class AudioSystem {
 
   // Play ambient music. We support a royalty-free URL first. If not ready or blocked, we fallback to procedural synth.
   public async playMusic() {
-    if (this.isMusicPlaying) {
-      if (this.ctx && this.ctx.state === 'suspended') {
+    this.init();
+    if (!this.ctx) return;
+
+    // If the HTML Audio element is already created, try playing it (resuming context if suspended)
+    if (this.audioHtml) {
+      if (this.ctx.state === 'suspended') {
         try {
           await this.ctx.resume();
         } catch (e) {
           console.warn('Failed to resume AudioContext on subsequent call:', e);
         }
       }
+      if (!this.isMusicPlaying) {
+        this.audioHtml.play().then(() => {
+          this.isMusicPlaying = true;
+        }).catch((err) => {
+          console.warn('HTML Audio play failed on subsequent call:', err);
+        });
+      }
       return;
     }
+
     if (this.isMusicInitiated) return;
     this.isMusicInitiated = true;
-
-    this.init();
-    if (!this.ctx) {
-      this.isMusicInitiated = false;
-      return;
-    }
 
     if (this.ctx.state === 'suspended') {
       try {
@@ -74,11 +80,15 @@ class AudioSystem {
       this.audioHtml.play().then(() => {
         this.isMusicPlaying = true;
       }).catch((err) => {
-        console.warn('HTML Audio autoplay blocked or failed, falling back to procedural synthesizer:', err);
+        console.warn('HTML Audio autoplay blocked or failed, waiting for user interaction:', err);
+        // Do not set isMusicPlaying = true so it can retry on user interaction
+        this.isMusicPlaying = false;
+        // As a fallback, we also start the procedural synth so there's at least some audio if HTML audio fails entirely
         this.startProceduralSynth();
       });
     } catch (e) {
       console.warn('Failed to setup HTML Audio, using procedural synth:', e);
+      this.isMusicPlaying = false;
       this.startProceduralSynth();
     }
   }
