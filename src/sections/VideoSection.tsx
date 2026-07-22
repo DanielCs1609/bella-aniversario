@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { audioSystem } from '../utils/audioSystem';
 import { SecretSpot } from '../components/SecretsOverlay';
-import { FiPlay, FiCheckCircle, FiX } from 'react-icons/fi';
-
-import RebecaVideo from '../assets/videos/RebecaAmiga.mov';
+import { FiPlay, FiCheckCircle, FiX, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 
 import CapaAnaAvó from '../assets/fotosCapa/capaAnaAvó.jpg';
 import CapaAnaClara from '../assets/fotosCapa/capaAnaClara.jpg';
@@ -16,6 +14,20 @@ import CapaJuliaViana from '../assets/fotosCapa/capaJuliaViana.png';
 import CapaMaria from '../assets/fotosCapa/capaMaria.jpg';
 import CapaPatricia from '../assets/fotosCapa/capaPatricia.jpg';
 import CapaRebeca from '../assets/fotosCapa/capaRebeca.jpg';
+
+const getYoutubeId = (url: string) => {
+  if (!url) return '';
+  if (url.includes('youtu.be/')) {
+    return url.split('youtu.be/')[1].split('?')[0];
+  }
+  if (url.includes('/shorts/')) {
+    return url.split('/shorts/')[1].split('?')[0];
+  }
+  if (url.includes('v=')) {
+    return url.split('v=')[1].split('&')[0];
+  }
+  return '';
+};
 
 interface VideoMessage {
   id: number;
@@ -50,7 +62,7 @@ export const VideoSection: React.FC = () => {
       relation: 'Amiga',
       quote: 'Muitas felicidade, muitos anos de vida.',
       photoUrl: CapaRebeca,
-      videoUrl: RebecaVideo
+      videoUrl: 'https://youtube.com/shorts/UWZuU9aatV4?feature=share'
     },
     {
       id: 4,
@@ -162,6 +174,37 @@ export const VideoSection: React.FC = () => {
       audioSystem.playVideoSound();
     }, 1500);
   };
+
+  const handlePrevVideo = () => {
+    if (!activeVideo) return;
+    const currentIndex = videoMessages.findIndex(v => v.id === activeVideo.id);
+    const prevIndex = (currentIndex - 1 + videoMessages.length) % videoMessages.length;
+    setActiveVideo(videoMessages[prevIndex]);
+    audioSystem.playClick();
+  };
+
+  const handleNextVideo = () => {
+    if (!activeVideo) return;
+    const currentIndex = videoMessages.findIndex(v => v.id === activeVideo.id);
+    const nextIndex = (currentIndex + 1) % videoMessages.length;
+    setActiveVideo(videoMessages[nextIndex]);
+    audioSystem.playClick();
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!activeVideo) return;
+      if (e.key === 'ArrowLeft') {
+        handlePrevVideo();
+      } else if (e.key === 'ArrowRight') {
+        handleNextVideo();
+      } else if (e.key === 'Escape') {
+        handleClosePlayer();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [activeVideo]);
 
   const handleClosePlayer = () => {
     setActiveVideo(null);
@@ -289,11 +332,7 @@ export const VideoSection: React.FC = () => {
               {/* Native HTML5 Video Player or YouTube Embed */}
               {activeVideo.videoUrl.includes('youtu.be') || activeVideo.videoUrl.includes('youtube.com') ? (
                 <iframe
-                  src={`https://www.youtube.com/embed/${
-                    activeVideo.videoUrl.includes('youtu.be/') 
-                      ? activeVideo.videoUrl.split('youtu.be/')[1].split('?')[0] 
-                      : activeVideo.videoUrl.split('v=')[1].split('&')[0]
-                  }?autoplay=1&rel=0`}
+                  src={`https://www.youtube.com/embed/${getYoutubeId(activeVideo.videoUrl)}?autoplay=1&rel=0`}
                   title={activeVideo.name}
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -309,6 +348,23 @@ export const VideoSection: React.FC = () => {
                   onEnded={handleVideoEnded}
                 />
               )}
+
+              {/* Prev/Next Navigation Controls */}
+              <button
+                onClick={handlePrevVideo}
+                className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 text-white/50 hover:text-gold bg-black/30 hover:bg-black/60 p-2 md:p-3 rounded-full z-20 cursor-pointer transition-all duration-300 transform active:scale-90"
+                aria-label="Vídeo Anterior"
+              >
+                <FiChevronLeft size={20} className="md:w-6 md:h-6" />
+              </button>
+
+              <button
+                onClick={handleNextVideo}
+                className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 text-white/50 hover:text-gold bg-black/30 hover:bg-black/60 p-2 md:p-3 rounded-full z-20 cursor-pointer transition-all duration-300 transform active:scale-90"
+                aria-label="Próximo Vídeo"
+              >
+                <FiChevronRight size={20} className="md:w-6 md:h-6" />
+              </button>
             </motion.div>
           </div>
         )}
