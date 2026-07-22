@@ -5,6 +5,7 @@ class AudioSystem {
   private ctx: AudioContext | null = null;
   private musicGain: GainNode | null = null;
   private isMusicPlaying = false;
+  private isMusicInitiated = false;
   private audioHtml: HTMLAudioElement | null = null;
   private synthInterval: any = null;
   private activeSynthOscillators: OscillatorNode[] = [];
@@ -27,14 +28,32 @@ class AudioSystem {
 
   // Play ambient music. We support a royalty-free URL first. If not ready or blocked, we fallback to procedural synth.
   public async playMusic() {
-    this.init();
-    if (!this.ctx) return;
+    if (this.isMusicPlaying) {
+      if (this.ctx && this.ctx.state === 'suspended') {
+        try {
+          await this.ctx.resume();
+        } catch (e) {
+          console.warn('Failed to resume AudioContext on subsequent call:', e);
+        }
+      }
+      return;
+    }
+    if (this.isMusicInitiated) return;
+    this.isMusicInitiated = true;
 
-    if (this.ctx.state === 'suspended') {
-      await this.ctx.resume();
+    this.init();
+    if (!this.ctx) {
+      this.isMusicInitiated = false;
+      return;
     }
 
-    if (this.isMusicPlaying) return;
+    if (this.ctx.state === 'suspended') {
+      try {
+        await this.ctx.resume();
+      } catch (e) {
+        console.warn('Failed to resume AudioContext:', e);
+      }
+    }
 
     this.musicGain = this.ctx.createGain();
     this.musicGain.gain.setValueAtTime(0, this.ctx.currentTime);

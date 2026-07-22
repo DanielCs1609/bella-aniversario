@@ -3,7 +3,6 @@ import { SecretsProvider } from './context/SecretsContext';
 import { SecretsOverlay } from './components/SecretsOverlay';
 import { StarryBackground } from './components/StarryBackground';
 import { CustomCursor } from './components/CustomCursor';
-import { AmbientMusicToggle } from './components/AmbientMusicToggle';
 import { HeroSection } from './sections/HeroSection';
 import { IntroSection } from './sections/IntroSection';
 import { CounterSection } from './sections/CounterSection';
@@ -56,9 +55,6 @@ function App() {
 
       {/* Premium Desktop-only Custom Cursor */}
       <CustomCursor />
-
-      {/* Floating Audio Manager (Spotify style wave / mute control) */}
-      <AmbientMusicToggle />
 
       {/* Hidden Message / Easter Egg overlay controller */}
       <SecretsOverlay />
