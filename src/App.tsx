@@ -8,11 +8,7 @@ import { IntroSection } from './sections/IntroSection';
 import { CounterSection } from './sections/CounterSection';
 import { TimelineSection } from './sections/TimelineSection';
 import { GallerySection } from './sections/GallerySection';
-import { TimeCapsuleSection } from './sections/TimeCapsuleSection';
 import { StarSkySection } from './sections/StarSkySection';
-import { BookSection } from './sections/BookSection';
-import { LoveCardsSection } from './sections/LoveCardsSection';
-import { FutureSection } from './sections/FutureSection';
 import { VideoSection } from './sections/VideoSection';
 import { LetterSection } from './sections/LetterSection';
 import { FinalSection } from './sections/FinalSection';
@@ -58,20 +54,8 @@ function App() {
         {/* Mosaic photo gallery with Touch-friendly lightbox */}
         <div id="gallery"><GallerySection /></div>
 
-        {/* Interactable chest holding first memories */}
-        <div id="capsule"><TimeCapsuleSection /></div>
-
         {/* Interactive Constellation quality map */}
         <div id="starsky"><StarSkySection /></div>
-
-        {/* 3D flip interactive memories book */}
-        <div id="book"><BookSection /></div>
-
-        {/* 3D rotate-on-hover Love card grid */}
-        <div id="love-cards"><LoveCardsSection /></div>
-
-        {/* Glowing road mapping our dreams */}
-        <div id="future"><FutureSection /></div>
 
         {/* Carousel messages overlay player */}
         <div id="videos"><VideoSection /></div>

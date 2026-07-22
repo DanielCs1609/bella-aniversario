@@ -161,6 +161,9 @@ export const GallerySection: React.FC = () => {
       {/* Hidden Secret Spot 7 */}
       <SecretSpot id={7} type="star" className="top-16 left-20 text-base" />
 
+      {/* Hidden Secret Spot 11 */}
+      <SecretSpot id={11} type="flower" className="bottom-20 right-20 text-base" />
+
       <div className="max-w-6xl mx-auto z-10 relative">
         {/* Title */}
         <div className="text-center mb-24">

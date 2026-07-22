@@ -73,6 +73,9 @@ export const StarSkySection: React.FC = () => {
       {/* Hidden Secret Spot 9 */}
       <SecretSpot id={9} type="star" className="top-12 left-1/4 text-sm" />
 
+      {/* Hidden Secret Spot 12 */}
+      <SecretSpot id={12} type="butterfly" className="bottom-24 right-12 text-sm" />
+
       <div className="z-10 text-center max-w-4xl w-full flex flex-col items-center">
         {/* Title */}
         <motion.div

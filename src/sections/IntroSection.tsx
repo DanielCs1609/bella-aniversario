@@ -33,6 +33,9 @@ export const IntroSection: React.FC = () => {
       {/* Hidden Secret Spot 3 */}
       <SecretSpot id={3} type="flower" className="bottom-20 right-10 text-lg" />
 
+      {/* Hidden Secret Spot 8 */}
+      <SecretSpot id={8} type="butterfly" className="top-20 left-10 text-lg" />
+
       <div className="max-w-4xl w-full flex flex-col md:flex-row items-center justify-center gap-12 md:gap-16 z-10">
         
         {/* Animated Text Container */}

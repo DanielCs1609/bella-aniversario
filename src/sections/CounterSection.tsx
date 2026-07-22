@@ -59,6 +59,9 @@ export const CounterSection: React.FC = () => {
       {/* Hidden Secret Spot 4 */}
       <SecretSpot id={4} type="star" className="top-1/4 left-12 text-base" />
 
+      {/* Hidden Secret Spot 10 */}
+      <SecretSpot id={10} type="heart" className="bottom-10 right-12 text-base" />
+
       <div className="z-10 text-center max-w-3xl w-full">
         {/* Title block */}
         <motion.p

@@ -4,14 +4,28 @@ import { audioSystem } from '../utils/audioSystem';
 import { SecretSpot } from '../components/SecretsOverlay';
 import { FiPlay, FiCheckCircle, FiX } from 'react-icons/fi';
 
+import AnaAvóVideo from '../assets/videos/AnaAvó.mp4';
+import AnaClaraVideo from '../assets/videos/AnaClara.mp4';
 import AnaJuliaVideo from '../assets/videos/AnaJulia.mp4';
+import IrmasVideo from '../assets/videos/Angelica, Alice e Aline Irmãs.mp4';
+import AngeloVideo from '../assets/videos/AngeloPai.mp4';
+import DanielVideo from '../assets/videos/Daniel.mp4';
 import GabrielVideo from '../assets/videos/Gabriel.mp4';
 import JuliaVianaVideo from '../assets/videos/JuliaViana.mp4';
 import MariaVideo from '../assets/videos/Maria.mp4';
+import PatriciaVideo from '../assets/videos/PatriciaMãe.mp4';
+import RebecaVideo from '../assets/videos/RebecaAmiga.mov';
 
+import CapaAnaAvó from '../assets/fotosCapa/capaAnaAvó.jpg';
+import CapaAnaClara from '../assets/fotosCapa/capaAnaClara.jpg';
 import CapaAnaJulia from '../assets/fotosCapa/capaAnaJulia.jpg';
+import CapaAngelo from '../assets/fotosCapa/capaAngelo.jpg';
+import CapaCriancas from '../assets/fotosCapa/capaCrianças.jpg';
+import CapaDaniel from '../assets/fotosCapa/capaDaniel.jpg';
 import CapaJuliaViana from '../assets/fotosCapa/capaJuliaViana.png';
 import CapaMaria from '../assets/fotosCapa/capaMaria.jpg';
+import CapaPatricia from '../assets/fotosCapa/capaPatricia.jpg';
+import CapaRebeca from '../assets/fotosCapa/capaRebeca.jpg';
 
 interface VideoMessage {
   id: number;
@@ -26,6 +40,30 @@ export const VideoSection: React.FC = () => {
   const videoMessages: VideoMessage[] = [
     {
       id: 1,
+      name: 'Júlia Viana',
+      relation: 'Amiga',
+      quote: 'Menina que traz alegria onde está.',
+      photoUrl: CapaJuliaViana,
+      videoUrl: JuliaVianaVideo
+    },
+    {
+      id: 2,
+      name: 'Ana Clara',
+      relation: 'Amiga',
+      quote: 'Parabéns, Bella! Que seu dia seja tão lindo e especial quanto você é.',
+      photoUrl: CapaAnaClara,
+      videoUrl: AnaClaraVideo
+    },
+    {
+      id: 3,
+      name: 'Rebeca',
+      relation: 'Amiga',
+      quote: 'Muitas felicidade, muitos anos de vida.',
+      photoUrl: CapaRebeca,
+      videoUrl: RebecaVideo
+    },
+    {
+      id: 4,
       name: 'Maria Fernanda',
       relation: 'Irmã',
       quote: 'Ele tem grandes projetos para sua vida.',
@@ -33,15 +71,15 @@ export const VideoSection: React.FC = () => {
       videoUrl: MariaVideo
     },
     {
-      id: 2,
+      id: 5,
       name: 'Ana Júlia',
       relation: 'Irmã',
-      quote: 'Lembre-se que você é amada por todos nós.',
+      quote: 'É uma honra ser sua irmã.',
       photoUrl: CapaAnaJulia,
       videoUrl: AnaJuliaVideo
     },
     {
-      id: 3,
+      id: 6,
       name: 'Gabriel',
       relation: 'Irmão',
       quote: 'Você deu orgulho pra família toda.',
@@ -49,12 +87,44 @@ export const VideoSection: React.FC = () => {
       videoUrl: GabrielVideo
     },
     {
-      id: 4,
-      name: 'Júlia Viana',
-      relation: 'Amiga',
-      quote: 'Que você continue sendo essa menina maravilhosa, incrível que você é.',
-      photoUrl: CapaJuliaViana,
-      videoUrl: JuliaVianaVideo
+      id: 7,
+      name: 'Angélica, Alice & Aline',
+      relation: 'Irmãs',
+      quote: 'Jesus cuida de vocês.',
+      photoUrl: CapaCriancas,
+      videoUrl: IrmasVideo
+    },
+    {
+      id: 8,
+      name: 'Ana (Avó)',
+      relation: 'Avó',
+      quote: 'Você é a minha menina linda, doce que tá no meu coração.',
+      photoUrl: CapaAnaAvó,
+      videoUrl: AnaAvóVideo
+    },
+    {
+      id: 9,
+      name: 'Ângelo',
+      relation: 'Pai',
+      quote: 'Você vai ser uma mulher muito vitoriosa.',
+      photoUrl: CapaAngelo,
+      videoUrl: AngeloVideo
+    },
+    {
+      id: 10,
+      name: 'Patrícia',
+      relation: 'Mãe',
+      quote: 'Que seu caminho seja sempre iluminado de amor e paz. Eu te amo muito, minha filha!',
+      photoUrl: CapaPatricia,
+      videoUrl: PatriciaVideo
+    },
+    {
+      id: 11,
+      name: 'Daniel',
+      relation: 'Namorado',
+      quote: 'Você conseguiu fazer uma coisa simples ficar cada vez mais importante e especial',
+      photoUrl: CapaDaniel,
+      videoUrl: DanielVideo
     }
   ];
 
@@ -118,6 +188,9 @@ export const VideoSection: React.FC = () => {
     <section className="relative w-full min-h-screen bg-dark-900 px-6 py-32 md:py-40 flex flex-col items-center justify-center overflow-hidden">
       {/* Hidden Secret Spot 14 */}
       <SecretSpot id={14} type="flower" className="bottom-16 right-20 text-sm" />
+
+      {/* Hidden Secret Spot 13 */}
+      <SecretSpot id={13} type="heart" className="top-20 left-20 text-sm" />
 
       <div className="z-10 text-center max-w-5xl w-full flex flex-col items-center">
         {/* Header */}
